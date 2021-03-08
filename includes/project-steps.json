@@ -1,0 +1,47 @@
+{
+    "steps": [
+        {
+            "image": "programa-de-necessidades",
+            "title": "Programa de Necessidades",
+            "text": [
+                "Conte-nos sobre você, abordamos uma conversa de estilo, gosto, desejo, seus sonhos e suas particularidades.",
+                "Nossa prioridade é interpretar a sua essência e através da sua personalidade criar o seu projeto. "
+            ]
+        },
+        {
+            "image": "cores-e-layout",
+            "title": "Cores e Layout",
+            "text": [
+                "Após reunir todas as informações e entender sua necessidade, apresentamos as propostas de layout e cores, assim chegamos ao seu estilo e layout final."
+            ]
+        },
+        {
+            "image": "volumetria-3D",
+            "title": "Volumetria 3D",
+            "text": [
+                "Após aprovado iniciamos o 3D e estudo preliminar de cores, texturas, acabamentos e mobiliário, informações técnicas para darmos início ao projeto executivo."
+            ]
+        },
+        {
+            "image": "projeto-executivo",
+            "title": "Projeto Executivo",
+            "text": [
+                "Nessa etapa definimos todos os acabamentos, gesso, cores, elétrica, hidráulica, iluminação e detalhes do projeto."
+            ]
+        },
+        {
+            "image": "acompanhamento-de-obra",
+            "title": "Acompanhamento de Obra",
+            "text": [
+                "Por fim, chegamos em das etapas de extrema importância. Todo o processo de obra,  que se inicia na demolição até o último detalhe. que irá compor seu projeto."
+            ]
+        },
+        {
+            "image": "entrega-do-projeto",
+            "title": "Conclusão do Projeto",
+            "text": [
+                "O projeto é de extrema importância para a realização de todas as etapas acima. Sem um bom projeto não é possível executar o gerenciamento de obra com eficiência, nossa equipe está pronta para cuidar do cronograma do seu projeto, com previsões de custo e prazos de entrega."
+            ]
+        }
+    ]
+}

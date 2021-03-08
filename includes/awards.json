@@ -1,0 +1,29 @@
+{
+    "awards": [
+        {
+            "name": "Prêmio Revista Decorar",
+            "category": "Profissional do ano",
+            "description": "Primeiro lugar em 2010, 2011, 2012, 2015, 2018 e 2019"
+        },
+        {
+            "name": "Prêmio Destaque do Ano em Arquitetura e Design",
+            "category": "Profissional do ano",
+            "description": "Primeiro lugar em 2019"
+        },
+        {
+            "name": "Prêmio Reconhecimento 2020 Arquitetos e Design de Interiores",
+            "category": "Profissional do ano",
+            "description": "Entre os 10 melhores"
+        },
+        {
+            "name": "Prêmio Talentos 2018",
+            "category": "Profissional do ano",
+            "description": "Entre os 10 melhores"
+        },
+        {
+            "name": "Prêmio Destaque 2017",
+            "category": "Destaque do ano",
+            "description": "Entre os 3 melhores"
+        }
+    ]
+}

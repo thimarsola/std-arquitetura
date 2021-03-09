@@ -1,0 +1,234 @@
+.hero {
+    @include marginSet;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background: {
+        image: url('../images/background-home.jpg');
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(#000, .7);
+        z-index: 0;
+        transform-origin: left;
+        transition: .3s ease-in-out;
+
+        -webkit-animation: fadeInBackground 1500ms linear -300ms 1 forwards;
+                animation: fadeInBackground 1500ms linear -300ms 1 forwards;
+    }
+
+    &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        color: var(--color-theme-white);
+        z-index: 1;
+
+        &__header {
+            margin-bottom: 1rem;
+            opacity: 0;
+            -webkit-animation: fadeInDownHeader 1000ms linear 600ms 1 forwards;
+                    animation: fadeInDownHeader 1000ms linear 600ms 1 forwards;
+
+            h1 {
+                width: 100%;
+                @include marginSet;
+
+                font: {
+                    size: 9.5rem;
+                }
+
+                line-height: 1.25;
+
+                span {
+                    &:nth-child(1) {
+                        color: var(--color-theme-primary);
+                    }
+
+                    &:nth-child(2) {
+                        width: 100%;
+                        display: inline-block;
+                        text-align: right !important;
+                    }
+                }
+            }
+        }
+
+        &__content {
+            text-align: right;
+            opacity: 0;
+            -webkit-animation: fadeInLeftText 1000ms linear 1300ms 1 forwards;
+                    animation: fadeInLeftText 1000ms linear 1300ms 1 forwards;
+
+            font: {
+                size: 2.6rem;
+            }
+        }
+    }
+
+    &__scroll {
+
+        display: block;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        cursor: pointer;
+
+        transition: .5s ease-in all;
+        -webkit-animation: fadeIn 11s;
+        animation: fadeIn 11s;
+        -webkit-animation: fade 1000ms linear 2500ms 1 forwards;
+                animation: fade 1000ms linear 2500ms 1 forwards;
+        z-index: 10;
+
+        a {
+            display: flex;
+            width: 5rem;
+            height: 8rem;
+            border-radius: 2rem;
+            border: 1.5px solid var(--color-theme-white);
+            align-self: baseline;
+
+            &::after {
+                margin: 0;
+                padding: 0;
+                position: relative;
+                top: 16%;
+                left: 50%;
+                display: block;
+                width: 1rem;
+                height: 1rem;
+                background-color: var(--color-theme-white);
+                border-radius: 50%;
+                transform: translatex(-50%);
+                content: "";
+                -webkit-animation: scroll 2s infinite;
+                animation: scroll 2s infinite;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+        top: 70%;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+        top: 70%;
+    }
+}
+
+@-webkit-keyframes fadeInBackground{
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeInBackground{
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes fadeInDownHeader{
+    from{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDownHeader{
+    from{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInLeftText{
+    from{
+        transform: translateX(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeftText{
+    from{
+        transform: translateX(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

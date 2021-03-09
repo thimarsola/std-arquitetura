@@ -6,33 +6,36 @@
     <section class="hero">
         <div class="container">
 
-            <!-- header -->
-            <header class="hero__header">
-                <h1>Arquitetura <span>&</span> <span>Design de Interiores</span></h1>
-            </header>
-            <!-- end of header -->
+            <!-- container -->
+            <div class="hero__container">
+                <!-- header -->
+                <header class="hero__container__header">
+                    <h1>Arquitetura <span>&</span><span>Design de Interiores</span></h1>
+                </header>
+                <!-- end of header -->
 
-            <!-- content -->
-            <div class="hero__content">
-                <p>Criar e ser capaz de traduzir personalidade e essência em uma arte!</p>
+                <!-- content -->
+                <div class="hero__container__content">
+                    <p>Criar e ser capaz de traduzir personalidade e essência em uma arte!</p>
+                </div>
+                <!-- end of content -->
             </div>
-            <!-- end of content -->
+            <!-- end of container -->
 
             <!-- scroll -->
             <div class="hero__scroll">
-                <a href="#a-arquitetura-esta-no-dna"><span></span></a>
+                <a href="#a-arquitetura-esta-no-dna"></a>
             </div>
             <!-- end of scroll -->
-
         </div>
     </section>
     <!-- end of hero -->
 
     <!-- whatsapp -->
     <div id="whatsapp" class="whatsapp__button">
-        <a href="https://api.whatsapp.com/send?phone=5511976994744&text=Ol%C3%A1%20Jo%C3%A3o%26Maria%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20assessoria!"
-            target="_blank">
-            <img src="" loading="lazy" alt="Fale com a STD Arquitetura pelo WhatsApp" title="Fale com a STD Arquitetura pelo WhatsApp">
+        <a href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]); ?>&text=<?= urlencode(CONTACT["whatsappMessage"]); ?>"
+            target="_blank" title="Fale com a STD Arquitetura pelo WhatsApp">
+            <i class="stdarquitetura-whatsapp"></i>
         </a>
     </div>
     <!-- end of whatsapp -->
@@ -44,13 +47,13 @@
         <div class="aboutUs__container">
 
             <!-- header -->
-            <header class="aboutUs__header">
-                <h1>"A arquitetura está no DNA"</h1>
+            <header class="aboutUs__container__header">
+                <h1>“A arquitetura <br>está no DNA”</h1>
             </header>
             <!-- end of header -->
 
             <!-- content -->
-            <div class="aboutUs__content">
+            <div class="aboutUs__container__content">
                 <p>Olá, estamos desde 1998 no mercado de arquitetura e design, prezamos por atendimentos
                     individualizados, podemos dizer que temos um estilo personalizado, cada projeto é único, e
                     totalmente planejado para ter a sua identidade e essência. </p>
@@ -444,7 +447,8 @@
                             <h2>E-mail</h2>
                         </header>
                         <!-- end of header -->
-                        <p><a href="mailto:<?= CONTACT["mail"]; ?>"><?= CONTACT["mail"]; ?></a></p>
+                        <p><a href="mailto:<?= CONTACT["mail"]; ?>"
+                                title="Encaminhe um E-mail para STD Arquitetura"><?= CONTACT["mail"]; ?></a></p>
 
                     </article>
                     <!-- end of mail -->
@@ -457,7 +461,12 @@
                             <h2>Endereço</h2>
                         </header>
                         <!-- end of header -->
-                        <p><a href="mailto:<?= CONTACT["mail"]; ?>"><?= CONTACT["mail"]; ?></a></p>
+                        <p>Matriz: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
+                                title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
+                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></p>
+                        <p>Escritório: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
+                                title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
+                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></p>
 
                     </article>
                     <!-- end of address -->
@@ -471,6 +480,14 @@
         </div>
     </section>
     <!-- end of office -->
+
+    <!-- map -->
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.5733669292827!2d-46.5530975850198!3d-23.691210384618618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4235f23fc7d5%3A0xf73b6e352b6b83e8!2sR.%20Jos%C3%A9%20Versolato%2C%20111%20-%20Centro%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009751-020!5e0!3m2!1spt-BR!2sbr!4v1615288098466!5m2!1spt-BR!2sbr"
+            allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <!-- end of map -->
 
 </main>
 <!-- end of main -->

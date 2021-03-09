@@ -56,10 +56,13 @@ define("REGION", [
  * CONTACT
  */
 define("CONTACT",[
-    "whatsapp" => "997977070",
+    "whatsapp" => "(11) 4123-5869",
+    "whatsappMessage" => "Olá STD Arquitetura, gostaria de maiores informações sobre o meu projeto",
     "matrix" => "(11) 4123-5869",
     "office" => "(11) 4123-5869",
     "telThamires" => "(11) 94780-1044",
     "telSilvia" => "(11) 97345-2220",
-    "mail" => "contato@stdarquitetura.com.br"
+    "mail" => "contato@stdarquitetura.com.br",
+    "addressMatrix" => "https://goo.gl/maps/7ooyUnh19YmbRZUf8",
+    "addressOffice" => "https://goo.gl/maps/7ooyUnh19YmbRZUf8"
 ]);

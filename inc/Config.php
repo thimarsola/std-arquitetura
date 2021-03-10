@@ -57,7 +57,7 @@ define("REGION", [
  */
 define("CONTACT",[
     "whatsapp" => "(11) 4123-5869",
-    "whatsappMessage" => "Olá STD Arquitetura, gostaria de maiores informações sobre o meu projeto",
+    "whatsappMessage" => "Olá STD Arquitetura, gostaria de maiores informações para o meu projeto",
     "matrix" => "(11) 4123-5869",
     "office" => "(11) 4123-5869",
     "telThamires" => "(11) 94780-1044",

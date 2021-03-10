@@ -111,11 +111,17 @@
             </header>
             <!-- end of header -->
 
-            <p>A STD Arquitetura gerenciada por Silvia Dias e Thamires Dias, mãe e filha, ambas formadas em Arquitetura
-                e Design de Interiores, compartilham personalidades e experiências únicas.</p>
-            <p>Com uma vivência internacional, criou-se a essência e a identidade do escritório, baseado em ideias
-                inovadoras, com um estilo moderno, contemporâneo e com um toque clássico, que resulta em uma arquitetura
-                única.</p>
+            <!-- text -->
+            <div class="dna__container__text">
+                <p>A STD Arquitetura gerenciada por Silvia Dias e Thamires Dias, mãe e filha, ambas formadas em
+                    Arquitetura
+                    e Design de Interiores, compartilham personalidades e experiências únicas.</p>
+                <p>Com uma vivência internacional, criou-se a essência e a identidade do escritório, baseado em ideias
+                    inovadoras, com um estilo moderno, contemporâneo e com um toque clássico, que resulta em uma
+                    arquitetura
+                    única.</p>
+            </div>
+            <!-- end of text -->
         </div>
         <!-- end of container -->
 
@@ -144,9 +150,8 @@
 
                 <!-- step -->
                 <article class="projectSteps__content__step">
-
                     <!-- image -->
-                    <div class="projectSteps__content__step__image" data-background="<?= $projectStep["image"]; ?>">
+                    <div class="projectSteps__content__step__image" style="--background: url('<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.jpg');">
                         <picture>
                             <source
                                 srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.webp"
@@ -364,7 +369,7 @@
                     <p>Agora solicite o seu orçamento sem compromisso. Preencha os campos abaixo e o mais rápido
                         possível nosso departamento comercial entrará em contato com você!</p>
 
-                    <form id="form" action="" method="POST" enctype="multipart/form-data">
+                    <form id="form" method="POST" enctype="multipart/form-data">
                         <input type="text" name="name" placeholder="Nome" required>
                         <input type="email" name="mail" placeholder="E-mail" required>
                         <input type="tel" name="phone" placeholder="Telefone" required>

@@ -5,6 +5,7 @@ $theme-colors: () !default;
 $theme-colors: map_merge(('theme-primary': #A74F52,
         'theme-text': #222222,
         'theme-white': #fff,
+        'theme-dark': #171717
     ), $theme-colors);
 
 $background-colors : ('background-dark': #171717,

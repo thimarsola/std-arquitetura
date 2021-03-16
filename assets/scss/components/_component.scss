@@ -5,8 +5,8 @@
 .btn {
     display: inline-block !important;
     margin: 0;
-    padding: 1rem 3.8rem;
-    border-radius: 3px;
+    padding: 1.6rem 5.2rem;
+    border-radius: none;
     cursor: pointer;
     vertical-align: middle;
     outline: none;
@@ -15,8 +15,8 @@
     transition: transform 0.3s ease-in-out;
 
     font: {
-        family: 'Roboto Light', serif !important;
-        size: 1.6rem;
+        family: 'Roboto Medium', sans-serif !important;
+        size: 1.8rem;
     }
 
     &:active {
@@ -57,17 +57,16 @@ $value in $theme-colors {
 
 @each $color,
 $value in $theme-colors {
-    @if $color==theme-white {
+    @if $color==theme-dark {
         .btn--outline-#{$color} {
-            border: 1.5px solid $value !important;
-            border-radius: 5rem;
+            border: 2px solid $value !important;
             color: $value;
             transition: 0.3s ease-in-out all;
 
             &:hover {
-                background-color: var(--color-theme-white);
-                border: 1.5px solid var(--color-theme-primary) !important;
-                color: var(--color-theme-primary);
+                background-color: var(--color-theme-primary);
+                border: 2px solid var(--color-theme-primary) !important;
+                color: var(--color-theme-white);
                 transition: 0.3s ease-in-out all;
             }
         }
@@ -75,7 +74,7 @@ $value in $theme-colors {
 
     @else {
         .btn--outline-#{$color} {
-            border: 1.5px solid $value !important;
+            border: 2px solid $value !important;
             color: $value;
             transition: background-color 0.3s ease-in-out;
 

@@ -12,6 +12,7 @@
         size: cover;
         position: center;
         repeat: no-repeat;
+        attachment: fixed;
     }
 
     &::after {
@@ -44,7 +45,7 @@
             -webkit-animation: fadeInDownHeader 1000ms linear 600ms 1 forwards;
                     animation: fadeInDownHeader 1000ms linear 600ms 1 forwards;
 
-            h1 {
+            h2 {
                 width: 100%;
                 @include marginSet;
 

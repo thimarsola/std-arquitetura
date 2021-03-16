@@ -21,5 +21,9 @@
         "gulp-image": "^6.2.1",
         "gulp-watch": "^5.0.1",
         "gulp-webp": "^4.0.1"
+    },
+    "dependencies": {
+        "lightbox2": "^2.11.3",
+        "sweetalert2": "^10.15.5"
     }
 }

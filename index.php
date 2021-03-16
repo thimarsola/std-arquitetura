@@ -10,7 +10,7 @@
             <div class="hero__container">
                 <!-- header -->
                 <header class="hero__container__header">
-                    <h1>Arquitetura <span>&</span><span>Design de Interiores</span></h1>
+                    <h2>Arquitetura <span>&</span> <span>Design de Interiores</span></h2>
                 </header>
                 <!-- end of header -->
 
@@ -24,7 +24,7 @@
 
             <!-- scroll -->
             <div class="hero__scroll">
-                <a href="#a-arquitetura-esta-no-dna"></a>
+                <a rel="nofollow" title="Conheça nosso site" href="#a-arquitetura-esta-no-dna"></a>
             </div>
             <!-- end of scroll -->
         </div>
@@ -33,7 +33,8 @@
 
     <!-- whatsapp -->
     <div id="whatsapp" class="whatsapp__button">
-        <a href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]); ?>&text=<?= urlencode(CONTACT["whatsappMessage"]); ?>"
+        <a rel="nofollow"
+            href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]); ?>&text=<?= urlencode(CONTACT["whatsappMessage"]); ?>"
             target="_blank" title="Fale com a STD Arquitetura pelo WhatsApp">
             <i class="stdarquitetura-whatsapp"></i>
         </a>
@@ -48,7 +49,7 @@
 
             <!-- header -->
             <header class="aboutUs__container__header">
-                <h1>“A arquitetura <br>está no DNA”</h1>
+                <h2>“A arquitetura <br>está no DNA”</h2>
             </header>
             <!-- end of header -->
 
@@ -107,7 +108,7 @@
 
             <!-- header -->
             <header class="dna__container__header">
-                <h1>Nosso DNA</h1>
+                <h2>Nosso DNA</h2>
             </header>
             <!-- end of header -->
 
@@ -134,24 +135,25 @@
 
             <!-- header -->
             <header class="projectSteps__header">
-                <h1>Entenda as etapas do seu Projeto</h1>
+                <h2>Entenda as etapas do seu Projeto</h2>
             </header>
             <!-- end of header -->
 
             <!-- content -->
             <div class="projectSteps__content">
 
-                <?php 
+                <?php
                 $jsonProjectSteps = file_get_contents(__DIR__ . "/includes/project-steps.json");
                 $projectStepsList = json_decode($jsonProjectSteps, true);
 
-                foreach ($projectStepsList['steps'] as $projectStep):
-            ?>
+                foreach ($projectStepsList['steps'] as $projectStep) :
+                    ?>
 
                 <!-- step -->
                 <article class="projectSteps__content__step">
                     <!-- image -->
-                    <div class="projectSteps__content__step__image" style="--background: url('<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.jpg');">
+                    <div class="projectSteps__content__step__image"
+                        style="--background: url('<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.jpg');">
                         <picture>
                             <source
                                 srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.webp"
@@ -167,15 +169,15 @@
 
                         <!-- header -->
                         <header class="projectSteps__content__step__body__header">
-                            <h2><?= $projectStep["title"]; ?></h2>
+                            <h3><?= $projectStep["title"]; ?></h3>
                             <hr>
                         </header>
                         <!-- end of header -->
 
                         <div class="projectSteps__content__step__body__container">
-                            <?php 
-                            foreach ($projectStep["text"] as $textInline):
-                        ?>
+                            <?php
+                            foreach ($projectStep["text"] as $textInline) :
+                                ?>
 
                             <p><?= $textInline; ?></p>
 
@@ -202,22 +204,26 @@
 
         <!-- header -->
         <header class="projects__header">
-            <h1>Conheça os Nossos Projetos</h1>
+            <h2>Conheça os Nossos Projetos</h2>
         </header>
         <!-- end of header -->
 
-        <div class="container">
+        <!-- content -->
+        <div class="projects__content">
+            <div class="container">
 
-            <!-- buttons -->
-            <div class="projects__buttons">
-                <a href="#" class="btn btn--outline-theme-dark" target="_blank"
-                    title="Conheça os nossos Projeto Residênciais">Projetos Residênciais</a>
-                <a href="#" class="btn btn--outline-theme-dark" target="_blank"
-                    title="Conheça os nossos Projeto Comerciais">Projetos Comerciais</a>
+                <!-- buttons -->
+                <div class="projects__content__buttons">
+                    <a href="#" class="btn btn--outline-theme-dark" target="_blank"
+                        title="Conheça os nossos Projetos Residênciais">Projetos Residênciais</a>
+                    <a href="#" class="btn btn--outline-theme-dark" target="_blank"
+                        title="Conheça os nossos Projetos Comerciais">Projetos Comerciais</a>
+                </div>
+                <!-- end of buttons -->
+
             </div>
-            <!-- end of buttons -->
-
         </div>
+        <!-- end of content -->
 
     </section>
     <!-- end of projects -->
@@ -227,28 +233,28 @@
         <div class="container">
             <!-- header -->
             <header class="testimonial__header">
-                <h1>O que os nossos clientes dizem sobre nós</h1>
+                <h2>O que os nossos clientes dizem sobre nós</h2>
             </header>
             <!-- end of header -->
 
             <!-- content -->
             <div class="testimonial__content">
 
-                <?php 
+                <?php
                     $jsonTestimonial = file_get_contents(__DIR__ . "/includes/testimonial.json");
                     $testimonialList = json_decode($jsonTestimonial, true);
 
-                    foreach ($testimonialList['testimonial'] as $testimony):
-                ?>
+                foreach ($testimonialList['testimonial'] as $testimony) :
+                    ?>
 
                 <!-- card -->
                 <div class="testimonial__content__card">
 
                     <!-- body -->
-                    <span>"</span>
                     <div class="testimonial__content__card__body">
+                        <span>“</span>
                         <?php
-                            foreach($testimony["text"] as $paragraphTestimony):
+                    foreach ($testimony["text"] as $paragraphTestimony) :
                         ?>
                         <p><?= $paragraphTestimony; ?></p>
                         <?php endforeach; ?>
@@ -257,13 +263,15 @@
 
                     <!-- header -->
                     <div class="testimonial__content__card__header">
-                        <picture>
-                            <source
-                                srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.webp"
-                                type="image/webp">
-                            <img src="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.jpg"
-                                alt="Depoimento <?= $testimony["name"]; ?>" loading="lazy">
-                        </picture>
+                        <div class="testimonial__content__card__header__image">
+                            <picture>
+                                <source
+                                    srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.webp"
+                                    type="image/webp">
+                                <img src="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.jpg"
+                                    alt="Depoimento <?= $testimony["name"]; ?>" loading="lazy">
+                            </picture>
+                        </div>
                         <p><?= $testimony["name"]; ?></p>
                     </div>
                     <!-- end of header -->
@@ -280,143 +288,142 @@
 
     <!-- awards -->
     <section id="nossos-premios" class="awards">
-        <div class="container">
+        <!-- container -->
+        <div class="awards__container">
+            <div class="container">
 
-            <!-- header -->
-            <header class="awards__header">
-                <h1>Prêmios que<br>Já Ganhamos</h1>
-            </header>
-            <!-- end of header -->
+                <!-- header -->
+                <header class="awards__container__header">
+                    <h2>Prêmios que <span>Já Ganhamos</span></h2>
+                </header>
+                <!-- end of header -->
 
-            <!-- content -->
-            <div class="awards__content">
+                <!-- content -->
+                <div class="awards__container__content">
 
-                <!-- award -->
-                <div class="awards__content__award">
+                    <!-- award -->
+                    <div class="awards__container__content__award">
 
-                    <?php 
+                        <?php
                         $jsonAwards = file_get_contents(__DIR__ . "/includes/awards.json");
                         $awardsList = json_decode($jsonAwards, true);
 
-                        foreach($awardsList["awards"] as $award):
-                    ?>
+                        foreach ($awardsList["awards"] as $award) :
+                            ?>
 
-                    <article class="awards__content__award__card">
+                        <article class="awards__container__content__award__card">
 
-                        <!-- header -->
-                        <header class="awards__content__award__card__header">
-                            <h2><?= $award["name"]; ?></h2>
-                            <p><?= $award["category"]; ?></p>
-                        </header>
-                        <!-- end of header -->
+                            <!-- header -->
+                            <header class="awards__container__content__award__card__header">
+                                <h3><?= $award["name"]; ?></h3>
+                                <p><?= $award["category"]; ?></p>
+                            </header>
+                            <!-- end of header -->
 
-                        <!-- body -->
-                        <div class="awards__content__award__card__body">
-                            <p><?= $award["description"]; ?></p>
-                        </div>
-                        <!-- end of body -->
+                            <!-- body -->
+                            <div class="awards__container__content__award__card__body">
+                                <p><?= $award["description"]; ?></p>
+                            </div>
+                            <!-- end of body -->
 
-                    </article>
+                        </article>
 
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+
+                    </div>
+                    <!-- end of award -->
+
+                    <!-- image -->
+                    <div class="awards__container__content__image">
+                        <picture>
+                            <source
+                                srcset="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura-destaque.webp"
+                                type="image/webp">
+                            <img src="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura-destaque.jpg"
+                                alt="Prêmios que o escritório STD Arquitetura já ganhou" loading="lazy">
+                        </picture>
+                        <p>Não paramos por aqui! O Escritório <b>STD Arquitetura</b> é premiado desde o ano de 2007,
+                            pelas principais revistas e associações de Arquitetura e Design de Interiores, entre eles
+                            workshop internacional, reconhecimento profissional, destaque do ano em arquitetura e design
+                            entre
+                            outros.</p>
+                    </div>
+                    <!-- end of image -->
 
                 </div>
-                <!-- end of award -->
-
-                <!-- image -->
-                <div class="awards__content__image">
-                    <picture>
-                        <source srcset="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura.webp"
-                            type="image/webp">
-                        <img src="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura.jpg"
-                            alt="Prêmios que o escritório STD Arquitetura já ganhou" loading="lazy">
-                    </picture>
-                    <p>Não paramos por aqui! O Escritório <b>STD Arquitetura</b> é premiado desde o ano de 2007, pelas
-                        principais revistas e associações de Arquitetura e Design de Interiores, entre eles workshop
-                        internacional, reconhecimento profissional, destaque do ano em arquitetura e design entre
-                        outros.</p>
-                </div>
-                <!-- end of image -->
+                <!-- end of content -->
 
             </div>
-            <!-- end of content -->
-
         </div>
+        <!-- end of container -->
     </section>
     <!-- end of awards -->
 
     <!-- contact -->
     <section id="contato" class="contact">
 
-        <!-- row -->
-        <div class="contact__row">
+        <!-- image -->
+        <div class="contact__image"></div>
+        <!-- end of image -->
 
-            <!-- image -->
-            <div class="contact__row__image"></div>
-            <!-- end of image -->
+        <!-- form -->
+        <div class="contact__form">
 
-            <!-- form -->
-            <div class="contact__row__form">
+            <!-- header -->
+            <header class="contact__form__header">
+                <h2>Fale Conosco</h2>
+            </header>
+            <!-- end of header -->
 
-                <!-- header -->
-                <header class="contact__row__form__header">
-                    <h1>Fale Conosco</h1>
-                </header>
-                <!-- end of header -->
+            <!-- content -->
+            <div class="contact__form__content">
+                <p>Agora solicite o seu orçamento sem compromisso. Preencha os campos abaixo e o mais rápido possível
+                    nosso departamento comercial entrará em contato com você!</p>
 
-                <!-- content -->
-                <div class="contact__row__form__content">
-                    <p>Agora solicite o seu orçamento sem compromisso. Preencha os campos abaixo e o mais rápido
-                        possível nosso departamento comercial entrará em contato com você!</p>
-
-                    <form id="form" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="name" placeholder="Nome" required>
-                        <input type="email" name="mail" placeholder="E-mail" required>
-                        <input type="tel" name="phone" placeholder="Telefone" required>
-                        <textarea name="message" cols="50" rows="4"
-                            placeholder="Mensagem (Para orçamento informe o tipo de imóvel, metragem e localização)"></textarea>
-                        <!-- button -->
-                        <div class="form__button">
-                            <button id="button" type="submit" name="submit" value="submit"
-                                class="btn btn--theme-primary">Enviar Contato</button>
-                        </div>
-                        <!-- end of button -->
-                    </form>
-
-                </div>
-                <!-- end of content -->
+                <form id="form" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="name" placeholder="Nome" required>
+                    <input type="email" name="mail" placeholder="E-mail" required>
+                    <input type="tel" name="phone" placeholder="Telefone" required>
+                    <textarea name="message" cols="50" rows="4"
+                        placeholder="Mensagem (Para orçamento informe o tipo de imóvel, metragem e localização)"></textarea>
+                    <!-- button -->
+                    <div class="form__button">
+                        <button id="button" type="submit" name="submit" value="submit"
+                            class="btn btn--theme-primary">Enviar</button>
+                    </div>
+                    <!-- end of button -->
+                </form>
 
             </div>
-            <!-- end of form -->
+            <!-- end of content -->
 
         </div>
-        <!-- end of row -->
+        <!-- end of form -->
 
     </section>
     <!-- end of contact -->
 
     <!-- office -->
     <section class="office">
-        <div class="office__row">
 
             <!-- information -->
-            <div class="office__row__information">
+            <div class="office__information">
 
                 <!-- header -->
-                <header class="office__row__information__header">
-                    <h1>STD Arquitetura</h1>
+                <header class="office__information__header">
+                    <h2>STD Arquitetura</h2>
                 </header>
                 <!-- end of header -->
 
                 <!-- content -->
-                <div class="office__row__information__content">
+                <div class="office__information__content">
 
                     <!-- hours -->
-                    <article class="office__row__information__content__card">
+                    <article class="office__information__content__card">
 
                         <!-- header -->
-                        <header class="office__row__information__content__card__header">
-                            <h2>Horário de Funcionamento</h2>
+                        <header class="office__information__content__card__header">
+                            <h3>Horário de Funcionamento</h3>
                         </header>
                         <!-- end of header -->
                         <p>Segunda à Sexta: 09:00h às 18:00h</p>
@@ -425,31 +432,34 @@
                     <!-- end of hours -->
 
                     <!-- phones -->
-                    <article class="office__row__information__content__card">
+                    <article class="office__information__content__card">
 
                         <!-- header -->
-                        <header class="office__row__information__content__card__header">
-                            <h2>Horário de Funcionamento</h2>
+                        <header class="office__information__content__card__header">
+                            <h3>Horário de Funcionamento</h3>
                         </header>
                         <!-- end of header -->
 
                         <p>Matriz: <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>"
                                 title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a></p>
+                                <br>
                         <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>"
                                 title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
+                                <br>
                         <p>Arquiteta Thamires Dias: <a href="tel:<?= formatPhone(CONTACT["telThamires"]); ?>"
                                 title="Telefone da Arquiteta Thamires Dias"><?= CONTACT["telThamires"]; ?></a></p>
+                                <br>
                         <p>Arquiteta Silvia Dias: <a href="tel:<?= formatPhone(CONTACT["telSilvia"]); ?>"
                                 title="Telefone da Arquiteta Silvia Dias"><?= CONTACT["telSilvia"]; ?></a></p>
                     </article>
                     <!-- end of phones -->
 
                     <!-- mail -->
-                    <article class="office__row__information__content__card">
+                    <article class="office__information__content__card">
 
                         <!-- header -->
-                        <header class="office__row__information__content__card__header">
-                            <h2>E-mail</h2>
+                        <header class="office__information__content__card__header">
+                            <h3>E-mail</h3>
                         </header>
                         <!-- end of header -->
                         <p><a href="mailto:<?= CONTACT["mail"]; ?>"
@@ -459,19 +469,20 @@
                     <!-- end of mail -->
 
                     <!-- address -->
-                    <article class="office__row__information__content__card">
+                    <article class="office__information__content__card">
 
                         <!-- header -->
-                        <header class="office__row__information__content__card__header">
-                            <h2>Endereço</h2>
+                        <header class="office__information__content__card__header">
+                            <h3>Endereço</h3>
                         </header>
                         <!-- end of header -->
-                        <p>Matriz: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
+                        <address>Matriz: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
                                 title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
-                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></p>
-                        <p>Escritório: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
+                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
+                                <br>
+                        <address>Escritório: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
                                 title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
-                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></p>
+                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
 
                     </article>
                     <!-- end of address -->
@@ -482,7 +493,10 @@
             </div>
             <!-- end of information -->
 
-        </div>
+            <!-- image -->
+            <div class="office__image"></div>
+            <!-- end of image -->
+
     </section>
     <!-- end of office -->
 

@@ -1,0 +1,32 @@
+.projects{
+    margin-top: 12rem;
+
+    &__header{
+        display: flex;
+        align-items: center;
+        margin-bottom: -3rem;
+        h2{
+            padding: 0 16rem;
+            background: var(--color-background-dark) padding-box;
+            font:{
+                family: 'Playfair Display Regular', serif !important;
+                size: 4rem;
+            }
+            color: var(--color-theme-white);
+        }
+    }
+
+    &__content{
+        padding: 12rem 0;
+        background-color: var(--color-background-gray);
+
+        &__buttons{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 12rem auto 0 auto;
+            width: 100%;
+            max-width: 80rem;
+            justify-content: space-around;
+        }
+    }
+}

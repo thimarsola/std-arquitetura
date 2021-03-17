@@ -59,7 +59,7 @@
                     <div class="header__navbar__section__toggle__bar"></div>
                     <div class="header__navbar__section__toggle__bar"></div>
                 </div>
-                <!-- end of toogle -->
+                <!-- end of toggle -->
 
                 <!-- container -->
                 <div class="header__navbar__section__container">

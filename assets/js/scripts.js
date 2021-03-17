@@ -1,3 +1,6 @@
+//Menu
+import('./theme/scroll.js');
+
 //Scroll Down
 import('./theme/scroll.js');
 

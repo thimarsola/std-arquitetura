@@ -29,7 +29,7 @@
         transition: .3s ease-in-out;
 
         -webkit-animation: fadeInBackground 1500ms linear -300ms 1 forwards;
-                animation: fadeInBackground 1500ms linear -300ms 1 forwards;
+        animation: fadeInBackground 1500ms linear -300ms 1 forwards;
     }
 
     &__container {
@@ -43,14 +43,14 @@
             margin-bottom: 1rem;
             opacity: 0;
             -webkit-animation: fadeInDownHeader 1000ms linear 600ms 1 forwards;
-                    animation: fadeInDownHeader 1000ms linear 600ms 1 forwards;
+            animation: fadeInDownHeader 1000ms linear 600ms 1 forwards;
 
             h2 {
                 width: 100%;
                 @include marginSet;
 
                 font: {
-                    size: 9.5rem;
+                    size: 9rem;
                 }
 
                 line-height: 1.25;
@@ -73,10 +73,10 @@
             text-align: right;
             opacity: 0;
             -webkit-animation: fadeInLeftText 1000ms linear 1300ms 1 forwards;
-                    animation: fadeInLeftText 1000ms linear 1300ms 1 forwards;
+            animation: fadeInLeftText 1000ms linear 1300ms 1 forwards;
 
             font: {
-                size: 2.6rem;
+                size: 2rem;
             }
         }
     }
@@ -95,7 +95,7 @@
         -webkit-animation: fadeIn 11s;
         animation: fadeIn 11s;
         -webkit-animation: fade 1000ms linear 2500ms 1 forwards;
-                animation: fade 1000ms linear 2500ms 1 forwards;
+        animation: fade 1000ms linear 2500ms 1 forwards;
         z-index: 10;
 
         a {
@@ -156,80 +156,88 @@
     }
 }
 
-@-webkit-keyframes fadeInBackground{
-    from{
+@-webkit-keyframes fadeInBackground {
+    from {
         transform: scaleX(0);
     }
-    to{
+
+    to {
         transform: scaleX(1);
     }
 }
 
-@keyframes fadeInBackground{
-    from{
+@keyframes fadeInBackground {
+    from {
         transform: scaleX(0);
     }
-    to{
+
+    to {
         transform: scaleX(1);
     }
 }
 
-@-webkit-keyframes fadeInDownHeader{
-    from{
+@-webkit-keyframes fadeInDownHeader {
+    from {
         opacity: 0;
         transform: translateY(-200px);
     }
-    to{
+
+    to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-@keyframes fadeInDownHeader{
-    from{
+@keyframes fadeInDownHeader {
+    from {
         opacity: 0;
         transform: translateY(-200px);
     }
-    to{
+
+    to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-@-webkit-keyframes fadeInLeftText{
-    from{
+@-webkit-keyframes fadeInLeftText {
+    from {
         transform: translateX(200px);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-@keyframes fadeInLeftText{
-    from{
+@keyframes fadeInLeftText {
+    from {
         transform: translateX(200px);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-@-webkit-keyframes fade{
-    from{
+@-webkit-keyframes fade {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
 
-@keyframes fade{
-    from{
+@keyframes fade {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }

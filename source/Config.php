@@ -20,6 +20,13 @@ define("SITE", [
 ]);
 
 /**
+ * SITE MINIFY
+ */
+if ($_SERVER["SERVER_NAME"] == "localhost") {
+    require __DIR__ . '/Minifier.php';
+}
+
+/**
  * SOCIAL CONFIG
  */
 define("SOCIAL", [
@@ -34,12 +41,12 @@ define("SOCIAL", [
  * MAIL CONNECT
  */
 define("MAIL", [
-    "host" => "mail.domain.com.br",
+    "host" => "mail.goognet.com.br",
     "port" => "587",
-    "user" => "sender@domain.com.br",
-    "passwd" => "password",
+    "user" => "sender@goognet.com.br",
+    "passwd" => "Contato123*",
     "from_name" => "Website Domain",
-    "from_email" => "domain@domain.com.br"
+    "from_email" => "thiago.marsola@goognet.com.br"
 ]);
 
 /**

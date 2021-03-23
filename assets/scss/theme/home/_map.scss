@@ -1,12 +1,12 @@
 .map {
     @include marginSet;
     width: 100%;
-    height: 100%;
+    // height: 100%;
 
     iframe {
         @include marginSet;
         width: 100%;
-        height: 30rem;
+        height: 31rem;
         border: none;
     }
 }

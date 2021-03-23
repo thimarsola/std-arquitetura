@@ -3,9 +3,9 @@
         item.addEventListener('click', scrollToIdOnClick);
     });
 
-    function scrollToIdOnClick() {
-        event.preventDefault();
-        const to = getScrollTopByHref(event.target) - 150;
+    function scrollToIdOnClick(e) {
+        e.preventDefault();
+        const to = getScrollTopByHref(e.target) - 115;
         scrollToPosition(to);
     }
 
@@ -17,6 +17,7 @@
         const id = element.getAttribute('href');
         return document.querySelector(id).offsetTop;
     }
+    
     // GoTo Browser antigos
     function smoothScrollTo(endX, endY, duration) {
         const startX = window.scrollX || window.pageXOffset;

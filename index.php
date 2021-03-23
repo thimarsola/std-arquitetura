@@ -212,10 +212,40 @@
         <div class="projects__content">
             <div class="container">
 
+                <!--layout-->
+                <div class="projects__content__layout">
+                    <?php
+                        $paged = ( get_query_var('paged') ) ? absint(get_query_var('paged')) : 1;
+
+                        $argProjects = [
+                            'posts_per_page' => 6,
+                            'post_type' => 'projetos',
+                            'paged' => $paged,
+                        ];
+                        // the query
+                        $the_query = new WP_Query($argProjects);
+                    ?>
+
+                    <?php if ($the_query->have_posts()) : ?>
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                    <?php get_template_part('template-parts/content', 'projects'); ?>
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php else : ?>
+
+                    <p style="grid-column: 1/4;">
+                        <?php
+                            _e('Desculpe! Não existem projetos cadastrados no momento.');
+                        ?>
+                    </p>
+                    <?php endif; ?>
+                </div>
+                <!--end of layout-->
+
                 <!-- buttons -->
                 <div class="projects__content__buttons">
                     <a href="#" class="btn btn--outline-theme-dark" target="_blank"
-                        title="Conheça os nossos Projetos Residênciais">Projetos Residênciais</a>
+                        title="Conheça os nossos Projetos Residênciais">Projetos Residenciais</a>
                     <a href="#" class="btn btn--outline-theme-dark" target="_blank"
                         title="Conheça os nossos Projetos Comerciais">Projetos Comerciais</a>
                 </div>
@@ -380,7 +410,7 @@
                 <p>Agora solicite o seu orçamento sem compromisso. Preencha os campos abaixo e o mais rápido possível
                     nosso departamento comercial entrará em contato com você!</p>
 
-                <form id="form" method="POST" enctype="multipart/form-data">
+                <form id="form" action="" method="POST" enctype="multipart/form-data">
                     <input type="text" name="name" placeholder="Nome" required>
                     <input type="email" name="mail" placeholder="E-mail" required>
                     <input type="tel" name="phone" placeholder="Telefone" required>
@@ -394,6 +424,15 @@
                     <!-- end of button -->
                 </form>
 
+                <!-- status -->
+                <div class="contact__form__content__status">
+                    <div class="d-none contact__form__content__status--loading">
+                        <img src="<?= get_template_directory_uri(); ?>/assets/images/spinner.svg" alt="Carregando"
+                            loading="lazy">
+                    </div>
+                </div>
+                <!-- end of status -->
+
             </div>
             <!-- end of content -->
 
@@ -406,96 +445,96 @@
     <!-- office -->
     <section class="office">
 
-            <!-- information -->
-            <div class="office__information">
+        <!-- information -->
+        <div class="office__information">
 
-                <!-- header -->
-                <header class="office__information__header">
-                    <h2>STD Arquitetura</h2>
-                </header>
-                <!-- end of header -->
+            <!-- header -->
+            <header class="office__information__header">
+                <h2>STD Arquitetura</h2>
+            </header>
+            <!-- end of header -->
 
-                <!-- content -->
-                <div class="office__information__content">
+            <!-- content -->
+            <div class="office__information__content">
 
-                    <!-- hours -->
-                    <article class="office__information__content__card">
+                <!-- hours -->
+                <article class="office__information__content__card">
 
-                        <!-- header -->
-                        <header class="office__information__content__card__header">
-                            <h3>Horário de Funcionamento</h3>
-                        </header>
-                        <!-- end of header -->
-                        <p>Segunda à Sexta: 09:00h às 18:00h</p>
+                    <!-- header -->
+                    <header class="office__information__content__card__header">
+                        <h3>Horário de Funcionamento</h3>
+                    </header>
+                    <!-- end of header -->
+                    <p>Segunda à Sexta: 09:00h às 18:00h</p>
 
-                    </article>
-                    <!-- end of hours -->
+                </article>
+                <!-- end of hours -->
 
-                    <!-- phones -->
-                    <article class="office__information__content__card">
+                <!-- phones -->
+                <article class="office__information__content__card">
 
-                        <!-- header -->
-                        <header class="office__information__content__card__header">
-                            <h3>Horário de Funcionamento</h3>
-                        </header>
-                        <!-- end of header -->
+                    <!-- header -->
+                    <header class="office__information__content__card__header">
+                        <h3>Horário de Funcionamento</h3>
+                    </header>
+                    <!-- end of header -->
 
-                        <p>Matriz: <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>"
-                                title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a></p>
-                                <br>
-                        <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>"
-                                title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
-                                <br>
-                        <p>Arquiteta Thamires Dias: <a href="tel:<?= formatPhone(CONTACT["telThamires"]); ?>"
-                                title="Telefone da Arquiteta Thamires Dias"><?= CONTACT["telThamires"]; ?></a></p>
-                                <br>
-                        <p>Arquiteta Silvia Dias: <a href="tel:<?= formatPhone(CONTACT["telSilvia"]); ?>"
-                                title="Telefone da Arquiteta Silvia Dias"><?= CONTACT["telSilvia"]; ?></a></p>
-                    </article>
-                    <!-- end of phones -->
+                    <p>Matriz: <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>"
+                            title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a></p>
+                    <br>
+                    <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>"
+                            title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
+                    <br>
+                    <p>Arquiteta Thamires Dias: <a href="tel:<?= formatPhone(CONTACT["telThamires"]); ?>"
+                            title="Telefone da Arquiteta Thamires Dias"><?= CONTACT["telThamires"]; ?></a></p>
+                    <br>
+                    <p>Arquiteta Silvia Dias: <a href="tel:<?= formatPhone(CONTACT["telSilvia"]); ?>"
+                            title="Telefone da Arquiteta Silvia Dias"><?= CONTACT["telSilvia"]; ?></a></p>
+                </article>
+                <!-- end of phones -->
 
-                    <!-- mail -->
-                    <article class="office__information__content__card">
+                <!-- mail -->
+                <article class="office__information__content__card">
 
-                        <!-- header -->
-                        <header class="office__information__content__card__header">
-                            <h3>E-mail</h3>
-                        </header>
-                        <!-- end of header -->
-                        <p><a href="mailto:<?= CONTACT["mail"]; ?>"
-                                title="Encaminhe um E-mail para STD Arquitetura"><?= CONTACT["mail"]; ?></a></p>
+                    <!-- header -->
+                    <header class="office__information__content__card__header">
+                        <h3>E-mail</h3>
+                    </header>
+                    <!-- end of header -->
+                    <p><a href="mailto:<?= CONTACT["mail"]; ?>"
+                            title="Encaminhe um E-mail para STD Arquitetura"><?= CONTACT["mail"]; ?></a></p>
 
-                    </article>
-                    <!-- end of mail -->
+                </article>
+                <!-- end of mail -->
 
-                    <!-- address -->
-                    <article class="office__information__content__card">
+                <!-- address -->
+                <article class="office__information__content__card">
 
-                        <!-- header -->
-                        <header class="office__information__content__card__header">
-                            <h3>Endereço</h3>
-                        </header>
-                        <!-- end of header -->
-                        <address>Matriz: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
-                                title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
-                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
-                                <br>
-                        <address>Escritório: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
-                                title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
-                                3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
+                    <!-- header -->
+                    <header class="office__information__content__card__header">
+                        <h3>Endereço</h3>
+                    </header>
+                    <!-- end of header -->
+                    <address>Matriz: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
+                            title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
+                            3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
+                    <br>
+                    <address>Escritório: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
+                            title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
+                            3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
 
-                    </article>
-                    <!-- end of address -->
-
-                </div>
-                <!-- end of content -->
+                </article>
+                <!-- end of address -->
 
             </div>
-            <!-- end of information -->
+            <!-- end of content -->
 
-            <!-- image -->
-            <div class="office__image"></div>
-            <!-- end of image -->
+        </div>
+        <!-- end of information -->
+
+        <!-- image -->
+        <div class="office__image"></div>
+        <!-- end of image -->
 
     </section>
     <!-- end of office -->

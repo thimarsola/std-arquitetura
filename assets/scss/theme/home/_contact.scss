@@ -71,6 +71,42 @@
                 }
             }
 
+            &__status {
+                &--loading {
+                    margin-top: 3.2rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        -webkit-animation: spin 2s infinite linear;
+                        animation: spin 2s infinite linear;
+                    }
+                }
+
+                @-webkit-keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+
+                }
+
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+
+                }
+            }
+
         }
     }
 }
@@ -134,5 +170,20 @@
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+.swal2-loader {
+    border-color: #A74F52 transparent #A74F52 !important;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #A74F52 !important;
+    transition: all 300ms ease-in-out;
+
+
+    &:hover {
+        background-color: darken(#A74F52, 10%) !important;
+        transition: all 300ms ease-in-out;
     }
 }

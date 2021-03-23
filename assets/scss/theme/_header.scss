@@ -21,7 +21,6 @@
 
         img {
             width: 20rem;
-            height: auto;
             transition: all 300ms ease-in-out;
         }
 
@@ -69,7 +68,7 @@
         }
 
         &--open {
-            overflow: hidden;
+            // overflow: hidden;
 
             .header__navbar__section__toggle {
                 position: absolute;
@@ -130,11 +129,11 @@
                             text-transform: uppercase;
 
                             a {
-                                transition: all 300ms ease-in-out;
+                                transition: color 300ms ease-in-out;
 
                                 &:hover {
                                     color: var(--color-theme-primary);
-                                    transition: all 300ms ease-in-out;
+                                    transition: color 300ms ease-in-out;
                                 }
                             }
                         }
@@ -191,7 +190,6 @@
         a {
             img {
                 width: 11rem;
-                height: auto;
                 transition: all 300ms ease-in-out;
             }
         }

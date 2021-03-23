@@ -1,0 +1,27 @@
+{
+    "name": "thiagomarsola/stdarquitetura",
+    "description": "Website develop by Goognet Solução Digital Agency for the company STD Arquitetura",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thiago Marsola",
+            "email": "thiago.marsola@goognet.com.br",
+            "role": "Developer",
+            "homepage": "https://goognet.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+    "require": {
+        "phpmailer/phpmailer": "*",
+        "squizlabs/php_codesniffer": "*",
+        "matthiasmullie/minify": "*"
+    }
+}

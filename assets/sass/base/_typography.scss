@@ -1,0 +1,41 @@
+* {
+    font-family: 'Roboto Light', sans-serif !important;
+}
+
+html {
+    font-size: var(--font-base) !important;
+    color: var(--clr-text-gray);
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display Bold', serif !important;
+    font-size: inherit;
+    line-height: 1.1;
+}
+
+strong,
+b {
+    font-family: 'Roboto Medium', sans-serif !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+address {
+    font: inherit;
+}

@@ -1,0 +1,410 @@
+@use '../../abstracts/'as *;
+
+.awards {
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 35rem;
+
+        background: {
+            image: url("../images/premios-std-arquitetura.jpg");
+            size: cover;
+            position: center;
+            repeat: no-repeat;
+        }
+
+        transform-origin: right;
+        opacity: 0;
+        transition: transform 300ms ease-in-out;
+
+        @include breakpoint(md) {
+            height: 28rem;
+        }
+
+    }
+
+    &__container {
+        position: relative;
+        margin: 0;
+        padding: 10rem 0;
+
+        &::before {
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            content: '';
+            display: block;
+            width: 73vw;
+            height: 4rem;
+            background-color: var(--clr-primary);
+            transform-origin: left;
+            opacity: 0;
+            transition: transform 300ms ease-in-out;
+
+            @include breakpoint(xl) {
+                top: -1.5rem;
+                height: 3rem;
+            }
+        }
+
+        &__header {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 4rem;
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform-origin: left;
+            transition: transform 300ms ease-in-out;
+
+            @include breakpoint(ms) {
+                padding-left: 2.8rem;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 10px;
+                height: 100%;
+
+                background: {
+                    color: var(--clr-primary);
+                }
+
+                transform-origin: bottom;
+                opacity: 0;
+                transition: transform 300ms ease-in-out;
+
+                @include breakpoint(ms) {
+                    width: 6px;
+                }
+            }
+
+            h2 {
+                position: relative;
+                width: 100%;
+                @include marginSet;
+
+                font: {
+                    family: 'Playfair Display Regular', serif !important;
+                    size: 8rem;
+                }
+
+                @include breakpoint(xl) {
+                    font-size: 6rem;
+                }
+
+                @include breakpoint(ms) {
+                    font-size: 4.2rem;
+                }
+
+                span {
+                    width: 100%;
+                    display: inline-block !important;
+                }
+            }
+        }
+
+        &__content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+
+            @include breakpoint(ms) {
+                display: block;
+            }
+
+            &__award {
+                flex-basis: calc(60% - 1.5rem);
+                opacity: 0;
+                transform-origin: bottom;
+                transition: transform 300ms ease-in-out;
+
+                @include breakpoint(ms) {
+                    margin-bottom: 3rem;
+                    ;
+                }
+
+                &__card {
+
+                    &:not(:last-child) {
+                        margin-bottom: 3.2rem;
+                    }
+
+                    &__header {
+                        h3 {
+                            margin-bottom: 1rem;
+
+                            font: {
+                                family: 'Playfair Display Regular', serif;
+                                size: 3.2rem;
+                            }
+
+                            color: var(--clr-primary);
+
+                            @include breakpoint(xl) {
+                                font-size: 2.8rem;
+                            }
+
+                            @include breakpoint(md) {
+                                font-size: 2.4rem;
+                                line-height: 1.5;
+                            }
+                        }
+
+                        p {
+                            @include marginSet;
+
+                            font: {
+                                family: 'Roboto Medium', sans-serif !important;
+                                size: 1.8rem;
+                            }
+                        }
+                    }
+
+                    &__body {
+                        font: {
+                            size: 1.4rem;
+                        }
+                    }
+                }
+            }
+
+            &__image {
+                flex-basis: calc(40% - 1.5rem);
+                margin-top: auto;
+                opacity: 0;
+                transform-origin: top;
+                transition: transform 300ms ease-in-out;
+
+                font: {
+                    size: 1.8rem;
+
+                }
+
+
+
+                text: {
+                    align: right;
+                }
+
+                line-height: 1.5;
+
+                picture {
+
+                    @include breakpoint(ms) {
+                        width: 100%;
+                        height: 30rem;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+
+                    object: {
+                        fit: cover;
+                        position: center;
+                    }
+                }
+
+                p {
+                    margin-top: 4rem;
+                }
+
+                @include breakpoint(xl) {
+                    font-size: 1.6rem;
+                }
+
+                @include breakpoint(md) {
+                    font-size: 1.4rem;
+                    margin-top: 0;
+                    margin-bottom: auto;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+.awards--animation {
+
+    &::before {
+        -webkit-animation: fadeInTopBackgroundAwards 1000ms linear 200ms 1 forwards;
+
+        animation: fadeInTopBackgroundAwards 1000ms linear 200ms 1 forwards;
+    }
+
+    .awards__container {
+
+        &::before {
+            -webkit-animation: fadeInRightVerticalLineAwards 700ms linear 400ms 1 forwards;
+
+            animation: fadeInRightVerticalLineAwards 700ms linear 400ms 1 forwards;
+        }
+
+        &__header {
+            -webkit-animation: fadeInRightHeaderAwards 700ms linear 1300ms 1 forwards;
+
+            animation: fadeInRightHeaderAwards 700ms linear 1300ms 1 forwards;
+
+            &::before {
+                -webkit-animation: fadeInVerticalLineAwards 700ms linear 2100ms 1 forwards;
+
+                animation: fadeInVerticalLineAwards 700ms linear 2100ms 1 forwards;
+            }
+        }
+
+        &__content {
+
+            &__award {
+                -webkit-animation: fadeInBottomAward 700ms linear 2800ms 1 forwards;
+
+                animation: fadeInBottomAward 700ms linear 2800ms 1 forwards;
+            }
+
+            &__image {
+                -webkit-animation: fadeInTopImageAwards 700ms linear 3600ms 1 forwards;
+
+                animation: fadeInTopImageAwards 700ms linear 3600ms 1 forwards;
+            }
+        }
+    }
+
+}
+
+@-webkit-keyframes fadeInTopBackgroundAwards {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInTopBackgroundAwards {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInRightVerticalLineAwards {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeInRightVerticalLineAwards {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes fadeInRightHeaderAwards {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRightHeaderAwards {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes fadeInVerticalLineAwards {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fadeInVerticalLineAwards {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@-webkit-keyframes fadeInBottomAward {
+    from {
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBottomAward {
+    from {
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fadeInTopImageAwards {
+    from {
+        transform: translateY(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInTopImageAwards {
+    from {
+        transform: translateY(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,38 @@
+@use "../abstracts"as *;
+
+.container {
+    display: block;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+    width: 100%;
+
+    @include mq(sm) {
+        margin: 0 auto;
+        padding: 0 1.6rem;
+        max-width: 540px;
+    }
+
+    @include mq(md) {
+        margin: 0 auto;
+        padding: 0 1.6rem;
+        max-width: 720px;
+    }
+
+    @include mq(lg) {
+        margin: 0 auto;
+        padding: 0 1.6rem;
+        max-width: 960px;
+    }
+
+    @include mq(xl) {
+        margin: 0 auto;
+        padding: 0 1.6rem;
+        max-width: 1140px;
+    }
+
+    @include mq(xxl) {
+        margin: 0 auto;
+        padding: 0 1.6rem;
+        max-width: 1320px;
+    }
+}

@@ -1,0 +1,10 @@
+@use "../abstracts"as *;
+
+@each $color,
+$shade in $colors {
+
+    .bg-#{$color} {
+        background-color: var(--clr-#{$color}) !important;
+    }
+
+}

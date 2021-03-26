@@ -244,9 +244,11 @@
 
                 <!-- buttons -->
                 <div class="projects__content__buttons">
-                    <a href="#" class="btn btn--outline-theme-dark" target="_blank"
+                    <a href="<?= get_permalink(get_page_by_title('Projetos Residenciais')); ?>"
+                        class="btn btn--outline-dark" target="_blank"
                         title="Conheça os nossos Projetos Residênciais">Projetos Residenciais</a>
-                    <a href="#" class="btn btn--outline-theme-dark" target="_blank"
+                    <a href="<?= get_permalink(get_page_by_title('Projetos Comerciais')); ?>"
+                        class="btn btn--outline-dark" target="_blank"
                         title="Conheça os nossos Projetos Comerciais">Projetos Comerciais</a>
                 </div>
                 <!-- end of buttons -->
@@ -419,7 +421,7 @@
                     <!-- button -->
                     <div class="form__button">
                         <button id="button" type="submit" name="submit" value="submit"
-                            class="btn btn--theme-primary">Enviar</button>
+                            class="btn btn--primary">Enviar</button>
                     </div>
                     <!-- end of button -->
                 </form>

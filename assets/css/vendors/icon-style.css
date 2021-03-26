@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "stdarquitetura-icon";
+  src: url("../font/StdArquiteturaIcon/fonts/stdarquitetura-icon.eot?7w6kw3");
+  src: url("../font/StdArquiteturaIcon/fonts/stdarquitetura-icon.eot?7w6kw3#iefix") format("embedded-opentype"), url("../font/StdArquiteturaIcon/fonts/stdarquitetura-icon.ttf?7w6kw3") format("truetype"), url("../font/StdArquiteturaIcon/fonts/stdarquitetura-icon.woff?7w6kw3") format("woff"), url("../font/StdArquiteturaIcon/fonts/stdarquitetura-icon.svg?7w6kw3#stdarquitetura-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "stdarquitetura-icon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.stdarquitetura-load:before {
+  content: "";
+}
+
+.stdarquitetura-whatsapp:before {
+  content: "";
+}
+
+.stdarquitetura-facebook:before {
+  content: "";
+  color: #fff;
+}
+
+.stdarquitetura-icon:before {
+  content: "";
+}
+
+.stdarquitetura-instagram:before {
+  content: "";
+  color: #fff;
+}
+
+.stdarquitetura-place:before {
+  content: "";
+}
+
+.stdarquitetura-plus:before {
+  content: "";
+  color: #fff;
+}
+
+.stdarquitetura-size:before {
+  content: "";
+}
+
+.stdarquitetura-type:before {
+  content: "";
+}
+
+.stdarquitetura-w3c-validator:before {
+  content: "";
+  color: #a74f52;
+}
+
+/*# sourceMappingURL=icon-style.css.map */

@@ -3,9 +3,11 @@
 
     <!-- office -->
     <div class="footer__office">
+
         <img src="<?= get_template_directory_uri(); ?>/assets/images/logo-rodape.svg" alt="Logo rodapé STD Arquitetura">
         <p><small>2021 - &COPY; STD Arquitetura - Todos os direitos reservados - Arquiteta Resp - Silvia Regina Dias -
                 CAU A79707-3</small></p>
+
     </div>
     <!-- end of office -->
 
@@ -27,8 +29,10 @@
 
             <!--validator-->
             <div class="footer__developer__validator">
-                <a rel="nofollow" href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2F<?= $urlBase ?>%2F"
-                    target="_blank" title="Tecnologia W3C"><i class="stdarquitetura-w3c-validator"></i> W3C Validator</a>
+                <a rel="nofollow"
+                    href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2F<?= $urlBase ?>%2F"
+                    target="_blank" title="Tecnologia W3C"><i class="stdarquitetura-w3c-validator"></i> W3C
+                    Validator</a>
             </div>
             <!--end of validator;-->
 

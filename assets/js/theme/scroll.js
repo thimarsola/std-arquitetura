@@ -17,7 +17,7 @@
         const id = element.getAttribute('href');
         return document.querySelector(id).offsetTop;
     }
-    
+
     // GoTo Browser antigos
     function smoothScrollTo(endX, endY, duration) {
         const startX = window.scrollX || window.pageXOffset;

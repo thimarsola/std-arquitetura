@@ -37,6 +37,18 @@ function animationSteps() {
 
 window.addEventListener('scroll', animationSteps);
 
+// Projects
+function animationProjects() {
+    const projects = document.querySelector('.projects');
+    const projectsPosition = projects.getBoundingClientRect().top;
+
+    if (projectsPosition < screenPosition) {
+        projects.classList.add('projects--animation');
+    }
+}
+
+window.addEventListener('scroll', animationProjects);
+
 // Testimonial
 function animationTestimonial() {
     const testimonial = document.querySelector('.testimonial');

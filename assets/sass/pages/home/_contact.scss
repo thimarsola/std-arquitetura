@@ -1,0 +1,237 @@
+@use '../../abstracts/'as *;
+
+.contact {
+    @include marginSet;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    color: var(--clr-white);
+    overflow: hidden;
+
+    @include breakpoint(ms) {
+        display: block;
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-basis: 44%;
+
+        @include breakpoint(md) {
+            flex-basis: 35%;
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+
+            background: {
+                image: url("../images/formulario-contato.jpg");
+                size: cover;
+                position: center;
+            }
+
+            opacity: 0;
+            transform-origin: left;
+            transition: transform 300ms ease-in-out;
+
+            @include breakpoint(md) {
+                background-position: left;
+            }
+
+            @include breakpoint(ms) {
+                display: none;
+            }
+        }
+    }
+
+    &__form {
+        width: 100%;
+        padding: 10rem;
+        flex-basis: 56%;
+        background-color: var(--clr-dark);
+        opacity: 0;
+        transform-origin: bottom;
+        transition: transform 300ms ease-in-out;
+
+        @include breakpoint(xl) {
+            padding: 10rem 5rem;
+        }
+
+        @include breakpoint(ms) {
+            padding: 10rem 3.2rem;
+        }
+
+        @include breakpoint(md) {
+            flex-basis: 65%;
+        }
+
+        &__header {
+            margin-bottom: 2.4rem;
+
+            font: {
+                size: 6rem;
+                family: 'Playfair Display Regular', serif !important;
+            }
+
+            @include breakpoint(xlg) {
+                font-size: 5rem;
+            }
+        }
+
+        &__content {
+            p {
+                font-size: 1.8rem;
+
+                @include breakpoint(xlg) {
+                    font-size: 1.6rem;
+                }
+            }
+
+            text-align: justify;
+
+            form {
+                margin-top: 6.4rem;
+
+                input {
+                    margin-bottom: 3.2rem;
+
+                }
+
+                .form__button {
+                    margin-top: 6.4rem;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+
+            &__status {
+                &--loading {
+                    margin-top: 3.2rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        -webkit-animation: spin 2s infinite linear;
+                        animation: spin 2s infinite linear;
+                    }
+                }
+
+                @-webkit-keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+
+                }
+
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+.contact--animation {
+    .contact__image {
+
+        &::before {
+            -webkit-animation: fadeInRightImageContact 700ms linear 200ms 1 forwards;
+
+            animation: fadeInRightImageContact 700ms linear 200ms 1 forwards;
+        }
+
+    }
+
+    .contact__form {
+        -webkit-animation: fadeInTopFormContact 700ms linear 800ms 1 forwards;
+
+        animation: fadeInTopFormContact 700ms linear 800ms 1 forwards;
+
+        @include breakpoint(ms) {
+            -webkit-animation-delay: 200ms;
+                    animation-delay: 200ms;
+        }
+    }
+}
+
+@-webkit-keyframes fadeInRightImageContact {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRightImageContact {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes fadeInTopFormContact {
+    from {
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInTopFormContact {
+    from {
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.swal2-loader {
+    border-color: #A74F52 transparent #A74F52 !important;
+    outline: none;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #A74F52 !important;
+    transition: all 300ms ease-in-out;
+
+
+    &:hover {
+        background-color: darken(#A74F52, 10%) !important;
+        transition: all 300ms ease-in-out;
+    }
+}

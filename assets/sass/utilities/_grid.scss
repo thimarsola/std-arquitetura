@@ -1,0 +1,23 @@
+@use '../abstracts/'as *;
+$columns: 12;
+$gap: 30px;
+
+.row {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: $gap;
+
+    [class^=col-] {
+        flex-basis: 100%;
+    }
+
+    @include mq(md) {
+        @for $i from 1 through $columns {
+            .col-#{$i} {
+                flex: 0 0 calc(((100% - (#{$gap} * (#{$i} - 1))) / (#{$columns} / #{$i})));
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use '../abstracts'as *;
+
+:root {
+    --font-base: 50%;
+
+    @include mq(md) {
+        --font-base: 62.5%;
+    }
+
+    @each $color,
+    $shade in $colors {
+        --clr-#{$color}: #{$shade}
+    }
+}

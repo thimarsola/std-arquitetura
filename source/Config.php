@@ -13,7 +13,7 @@ define("DEV", [
  */
 define("SITE", [
     "name" => "STD Arquitetura",
-    "desc" => "Desenvolvemos projetos sofisticados e personalizados para os mais exigentes padrões, além da qualidade funcional e distribuição perfeita dos ambientes.",
+    "desc" => "Desenvolvemos projetos sofisticados e personalizados para os mais exigentes padrões, além da qualidade funcional e distribuição perfeita dos ambientes",
     "domain" => "stdarquitetura.com.br",
     "locale" => "pt_BR",
     "lang" => "pt-BR",

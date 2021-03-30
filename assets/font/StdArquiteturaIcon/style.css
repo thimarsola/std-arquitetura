@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'stdarquitetura-icon';
-  src:  url('fonts/stdarquitetura-icon.eot?7w6kw3');
-  src:  url('fonts/stdarquitetura-icon.eot?7w6kw3#iefix') format('embedded-opentype'),
-    url('fonts/stdarquitetura-icon.ttf?7w6kw3') format('truetype'),
-    url('fonts/stdarquitetura-icon.woff?7w6kw3') format('woff'),
-    url('fonts/stdarquitetura-icon.svg?7w6kw3#stdarquitetura-icon') format('svg');
+  src:  url('fonts/stdarquitetura-icon.eot?q109cf');
+  src:  url('fonts/stdarquitetura-icon.eot?q109cf#iefix') format('embedded-opentype'),
+    url('fonts/stdarquitetura-icon.ttf?q109cf') format('truetype'),
+    url('fonts/stdarquitetura-icon.woff?q109cf') format('woff'),
+    url('fonts/stdarquitetura-icon.svg?q109cf#stdarquitetura-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,37 +25,64 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.stdarquitetura-load:before {
-  content: "\e903";
-}
-.stdarquitetura-whatsapp:before {
-  content: "\ea8c";
-}
 .stdarquitetura-facebook:before {
   content: "\e900";
   color: #fff;
 }
 .stdarquitetura-icon:before {
   content: "\e901";
+  color: #b71c35;
 }
 .stdarquitetura-instagram:before {
   content: "\e902";
   color: #fff;
 }
-.stdarquitetura-place:before {
-  content: "\ea87";
+.stdarquitetura-load:before {
+  content: "\e903";
+  color: #a34e53;
+}
+.stdarquitetura-place .path1:before {
+  content: "\e904";
+  color: rgb(179, 30, 56);
+}
+.stdarquitetura-place .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(167, 79, 82);
+}
+.stdarquitetura-place .path3:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(179, 30, 56);
 }
 .stdarquitetura-plus:before {
-  content: "\ea88";
+  content: "\e907";
   color: #fff;
 }
 .stdarquitetura-size:before {
-  content: "\ea89";
+  content: "\e908";
+  color: #b31e38;
+}
+.stdarquitetura-spinner:before {
+  content: "\e909";
+  color: #a74f52;
+}
+.stdarquitetura-sync:before {
+  content: "\e90a";
+  color: #a74f52;
+}
+.stdarquitetura-testimony:before {
+  content: "\e90b";
+  color: #671c1c;
 }
 .stdarquitetura-type:before {
-  content: "\ea8a";
+  content: "\e90c";
+  color: #b31e38;
 }
 .stdarquitetura-w3c-validator:before {
-  content: "\ea8b";
+  content: "\e90d";
   color: #a74f52;
+}
+.stdarquitetura-whatsapp:before {
+  content: "\e90e";
 }

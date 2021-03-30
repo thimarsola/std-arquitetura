@@ -21,14 +21,6 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.stdarquitetura-load:before {
-  content: "";
-}
-
-.stdarquitetura-whatsapp:before {
-  content: "";
-}
-
 .stdarquitetura-facebook:before {
   content: "";
   color: #fff;
@@ -36,6 +28,7 @@ i {
 
 .stdarquitetura-icon:before {
   content: "";
+  color: #b71c35;
 }
 
 .stdarquitetura-instagram:before {
@@ -43,26 +36,65 @@ i {
   color: #fff;
 }
 
-.stdarquitetura-place:before {
-  content: "";
+.stdarquitetura-load:before {
+  content: "";
+  color: #a34e53;
+}
+
+.stdarquitetura-place .path1:before {
+  content: "";
+  color: rgb(179, 30, 56);
+}
+
+.stdarquitetura-place .path2:before {
+  content: "";
+  margin-left: -1em;
+  color: rgb(167, 79, 82);
+}
+
+.stdarquitetura-place .path3:before {
+  content: "";
+  margin-left: -1em;
+  color: rgb(179, 30, 56);
 }
 
 .stdarquitetura-plus:before {
-  content: "";
+  content: "";
   color: #fff;
 }
 
 .stdarquitetura-size:before {
-  content: "";
+  content: "";
+  color: #b31e38;
+}
+
+.stdarquitetura-spinner:before {
+  content: "";
+  color: #a74f52;
+}
+
+.stdarquitetura-sync:before {
+  content: "";
+  color: #a74f52;
+}
+
+.stdarquitetura-testimony:before {
+  content: "";
+  color: #671c1c;
 }
 
 .stdarquitetura-type:before {
-  content: "";
+  content: "";
+  color: #b31e38;
 }
 
 .stdarquitetura-w3c-validator:before {
-  content: "";
+  content: "";
   color: #a74f52;
+}
+
+.stdarquitetura-whatsapp:before {
+  content: "";
 }
 
 /*# sourceMappingURL=icon-style.css.map */

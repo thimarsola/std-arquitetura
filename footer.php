@@ -5,7 +5,8 @@
     <div class="footer__office">
 
         <img src="<?= get_template_directory_uri(); ?>/assets/images/logo-rodape.svg" alt="Logo rodapé STD Arquitetura">
-        <p><small>2021 - &COPY; STD Arquitetura - Todos os direitos reservados - Arquiteta Resp - Silvia Regina Dias -
+        <p><small><?= date("Y") ?> - &COPY; STD Arquitetura - Todos os direitos reservados - Arquiteta Resp - Silvia
+                Regina Dias -
                 CAU A79707-3</small></p>
 
     </div>

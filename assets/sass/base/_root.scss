@@ -2,6 +2,7 @@
 
 :root {
     --font-base: 50%;
+    --gap: 1.5rem;
 
     @include mq(md) {
         --font-base: 62.5%;

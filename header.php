@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="alternate" href="<?= (is_home() ? get_site_url() : get_page_link()); ?>" hreflang="x-default" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-    <title><?= SITE["name"]; ?></title>
+    <title><?php echo(is_home()) ? SITE["name"] : the_title() . " - " . SITE["name"]; ?></title>
     <base href="<?= get_site_url(); ?>">
     <meta name="description" content="<?= SITE["desc"]; ?>">
     <meta name="keywords" content="STD Arquitetura, Escritório STD Arquitetura, Arquitetura, Reforma">
@@ -65,7 +67,13 @@
                 <div class="header__navbar__section__container">
                     <!-- nav -->
                     <nav class="header__navbar__section__container__nav">
-                        <?php wp_nav_menu(array('theme_location' => 'header-home', 'container_class' => '')); ?>
+                        <?php
+                            if(is_home()){
+                                wp_nav_menu(array('theme_location' => 'header-home', 'container_class' => '')); 
+                            }else{
+                                wp_nav_menu(array('theme_location' => 'header-menu', 'container_class' => '')); 
+                            }
+                        ?>
                     </nav>
                     <!-- end of nav -->
 

@@ -1,0 +1,206 @@
+@use '../../abstracts/'as *;
+
+.project {
+    padding-top: 10rem;
+
+    &__header {
+        margin-bottom: 3.2rem;
+
+        font: {
+            family: 'Playfair Display Regular', serif !important;
+            size: 6rem;
+        }
+
+        color: var(--clr-primary);
+
+        @include breakpoint(md) {
+            font-size: 4rem;
+        }
+    }
+
+    &__content {
+        font-size: 2rem;
+        text-align: justify;
+
+        @include breakpoint(md) {
+            font-size: 1.6rem;
+        }
+
+        &__data {
+            width: 100%;
+            margin-top: 12.8rem;
+            margin-bottom: 10rem;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+
+            @include breakpoint(md) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include breakpoint(xxs) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            &__card {
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-right: 1.6rem;
+                    font-size: 5.2rem;
+                }
+
+                &__group {
+                    font-size: 1.8rem;
+                    line-height: 1;
+
+                    &__header {
+                        margin-bottom: 0.8em;
+                        font-size: 2rem;
+                        color: var(--clr-primary);
+                    }
+                }
+            }
+        }
+    }
+
+    &__photos {
+        @include margin;
+        width: 100%;
+        background-color: var(--clr-light-gray);
+
+        &__header {
+            margin-bottom: 4rem;
+
+            font: {
+                family: 'Playfair Display Regular', serif !important;
+                size: 3.8rem;
+            }
+
+            color: var(--clr-primary);
+
+            @include breakpoint(ms) {
+                font-size: 3.2rem;
+            }
+        }
+
+        &__content {
+
+            &__grid {
+                position: relative;
+                -moz-columns: 3;
+                columns: 3;
+                gap: var(--gap);
+
+                @include breakpoint(md) {
+                    -moz-columns: 2;
+                    columns: 2;
+                }
+
+                @include breakpoint(md) {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @include breakpoint(ms) {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                &__layout {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    -moz-column-break-inside: avoid;
+                    break-inside: avoid;
+                    transform: scale(1);
+                    transition: transform 300ms ease-in-out;
+
+
+                    &:not(:last-child) {
+                        margin-bottom: var(--gap);
+                    }
+
+                    &:hover {
+                        transform: scale(.98);
+                        transition: transform 300ms ease-in-out;
+                    }
+
+                    @include breakpoint(md) {
+                        height: 20rem;
+                        margin-bottom: 0 !important;
+                    }
+
+                    @include breakpoint(xsm) {
+                        height: 18rem;
+                    }
+
+                    a {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+
+                        &::after {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: block;
+                            content: '';
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(#000, .8);
+                            z-index: 5;
+                            opacity: 0;
+                            transition: opacity 300ms ease-in-out;
+
+                        }
+
+                        &::before {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            display: block;
+                            content: '\e907';
+                            font-family: 'stdarquitetura-icon';
+                            font-size: 5rem;
+                            color: var(--clr-white);
+                            z-index: 6;
+                            opacity: 0;
+                            transform: translate(-50%, -50%);
+                            transition: opacity 300ms ease-in-out;
+                        }
+
+                        &:hover {
+                            transition: opacity 300ms ease-in-out;
+
+                            &::after {
+                                opacity: 1;
+                                transition: opacity 300ms ease-in-out;
+                            }
+
+                            &::before {
+                                opacity: 1;
+                                transition: opacity 300ms ease-in-out;
+                                transition-delay: 250ms;
+                            }
+                        }
+
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+
+                            object: {
+                                fit: cover;
+                                position: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

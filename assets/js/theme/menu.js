@@ -19,10 +19,3 @@ menuItem.forEach((item) => {
         document.body.style.overflow = "initial";
     });
 });
-
-// sticky
-window.addEventListener("scroll", function () {
-    let header = document.querySelector(".header");
-
-    header.classList.toggle("header--active", window.scrollY > 0);
-});

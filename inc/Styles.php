@@ -9,6 +9,8 @@ function loadCSS()
         wp_enqueue_style('style-pages', get_template_directory_uri() . '/assets/css/style-pages.min.css', [], '1.0.0', 'all');
     }else if (is_single()){
         wp_enqueue_style('style-single', get_template_directory_uri() . '/assets/css/style-single.min.css', [], '1.0.0', 'all');
+    }else if(is_404()){
+        wp_enqueue_style('style-error', get_template_directory_uri() . '/assets/css/style-error.min.css', [], '1.0.0', 'all');
     }
 }
 

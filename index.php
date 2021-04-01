@@ -265,7 +265,7 @@
         <div class="container">
             <!-- header -->
             <header class="testimonial__header">
-                <h2>O que os nossos clientes dizem sobre nós</h2>
+                <h2>O que os clientes dizem sobre nós</h2>
             </header>
             <!-- end of header -->
 
@@ -412,11 +412,11 @@
                 <p>Agora solicite o seu orçamento sem compromisso. Preencha os campos abaixo e o mais rápido possível
                     nosso departamento comercial entrará em contato com você!</p>
 
-                <form id="form" action="" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="name" placeholder="Nome" required>
-                    <input type="email" name="mail" placeholder="E-mail" required>
-                    <input type="tel" name="phone" placeholder="Telefone" required>
-                    <textarea name="message" cols="50" rows="4"
+                <form id="form" method="POST" enctype="multipart/form-data">
+                    <input id="name" type="text" name="name" placeholder="Nome" required>
+                    <input id="email" type="email" name="mail" placeholder="E-mail" required>
+                    <input id="phone" type="tel" name="phone" placeholder="Telefone" required>
+                    <textarea id="message" name="message" cols="50" rows="4"
                         placeholder="Mensagem (Para orçamento informe o tipo de imóvel, metragem e localização)"></textarea>
                     <!-- button -->
                     <div class="form__button">
@@ -543,7 +543,7 @@
 
     <!-- map -->
     <div class="map">
-        <iframe
+        <iframe title="Escritório STD Arquitetura"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.5733669292827!2d-46.5530975850198!3d-23.691210384618618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4235f23fc7d5%3A0xf73b6e352b6b83e8!2sR.%20Jos%C3%A9%20Versolato%2C%20111%20-%20Centro%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009751-020!5e0!3m2!1spt-BR!2sbr!4v1615288098466!5m2!1spt-BR!2sbr"
             allowfullscreen="" loading="lazy"></iframe>
     </div>

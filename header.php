@@ -4,9 +4,14 @@
 <head>
     <meta charset="utf-8">
     <link rel="alternate" href="<?= (is_home() ? get_site_url() : get_page_link()); ?>" hreflang="x-default" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
+    <?php  if (!is_404()): ?>
     <title><?php echo(is_home()) ? SITE["name"] : the_title() . " - " . SITE["name"]; ?></title>
+    <?php else: ?>
+    <title><?= SITE["name"]; ?></title>
+    <?php endif; ?>
+
     <base href="<?= get_site_url(); ?>">
     <meta name="description" content="<?= SITE["desc"]; ?>">
     <meta name="keywords" content="STD Arquitetura, Escritório STD Arquitetura, Arquitetura, Reforma">
@@ -30,10 +35,34 @@
     <meta property="og:description" content="<?= SITE["desc"]; ?>">
     <meta property="og:site_name" content="<?= SITE["name"] ?>">
 
+    <meta name="google-site-verification" content="2aplT_0QmuOd3L0Mt-TsWP7qHLYdfDs3H8_91QKoMQw" />
     <?php wp_head(); ?>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WR5WCNN');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body id="home" <?php body_class(); ?>>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR5WCNN" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <?php
     if (function_exists('custom_wp_body_open')) {
         wp_body_open();
@@ -41,6 +70,10 @@
     ?>
 
     <h1 class="d-none">STD Arquitetura</h1>
+
+    <?php
+        if(!is_404()):
+    ?>
 
     <!--header-->
     <header class="header">
@@ -95,3 +128,4 @@
         <!--end of navbar-->
     </header>
     <!--end of header-->
+    <?php endif ?>

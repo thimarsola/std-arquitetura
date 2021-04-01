@@ -26,7 +26,7 @@ if ($_POST) {
                     <p><strong>Mensagem:</strong><p>
                     <p>$messageForm</p>",
             SITE['name'],
-            "thiago.marsola@goognet.com.br"
+            MAIL['from_email']
     )->send();
 
     if (!$email->error()) {

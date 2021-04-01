@@ -1,19 +1,12 @@
 @use "../abstracts/"as *;
 
 .header {
+    position: fixed;
+    width: 100%;
     margin: 0;
     padding: 1.6rem 0;
-    width: 100%;
-    position: fixed;
     z-index: 1000;
-    background: none;
-    opacity: 0;
-    transform-origin: bottom;
-    transition: height 300ms ease-in-out;
-
-    -webkit-animation: fadeInBottomHeader 700ms linear 3000ms 1 forwards;
-
-    animation: fadeInBottomHeader 700ms linear 3000ms 1 forwards;
+    background: transparent;
 
     &__navbar {
         margin: 0 auto;
@@ -29,7 +22,7 @@
 
         img {
             width: 20rem;
-            transition: width 300ms linear;
+            transition: width 300ms ease-in-out;
 
             @include breakpoint(md) {
                 width: 18rem;
@@ -38,7 +31,7 @@
         }
 
         &__section {
-            overflow-x: hidden;
+            overflow: hidden;
 
             &__toggle {
                 cursor: pointer;
@@ -100,7 +93,76 @@
                 transform-origin: right;
                 transform: scaleX(0);
                 transition-duration: 300ms;
-                overflow-x: hidden;
+                overflow: hidden;
+
+                &__nav {
+                    ul {
+                        li {
+                            &:not(:last-child) {
+                                margin-bottom: 4.8rem;
+                            }
+
+                            font: {
+                                family: 'Playfair Display Bold', serif !important;
+                                size: 2.2rem;
+                            }
+
+                            line-height: 1;
+
+                            text-transform: uppercase;
+
+                            a {
+                                color: var(--clr-white);
+                                transition: color 300ms ease-in-out;
+
+                                &:hover {
+                                    color: var(--clr-primary);
+                                    transition: color 300ms ease-in-out;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &__socialMedia {
+                    position: absolute;
+                    bottom: 2rem;
+                    right: 2rem;
+
+                    ul {
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        font: {
+                            size: 4rem;
+                        }
+
+                        li {
+                            &:first-child {
+                                margin-right: 2.4rem;
+                            }
+
+                            a {
+                                i {
+                                    &::before {
+                                        color: var(--clr-white);
+                                        transition: color 300ms ease-in-out;
+                                    }
+
+                                    &:hover {
+
+                                        &::before {
+                                            color: var(--clr-primary);
+                                            transition: color 300ms ease-in-out;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -172,74 +234,6 @@
                 @include breakpoint(xsm) {
                     width: 92vw;
                 }
-
-                &__nav {
-
-                    ul {
-
-                        li {
-                            &:not(:last-child) {
-                                margin-bottom: 4.8rem;
-                            }
-
-                            font: {
-                                family: 'Playfair Display Bold', serif !important;
-                                size: 2.2rem;
-                            }
-
-                            line-height: 1;
-
-                            text-transform: uppercase;
-
-                            a {
-                                color: inherit;
-                                transition: color 300ms ease-in-out;
-
-                                &:hover {
-                                    color: var(--clr-primary);
-                                    transition: color 300ms ease-in-out;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                &__socialMedia {
-                    position: absolute;
-                    bottom: 1.5rem;
-                    right: 1.5rem;
-
-                    ul {
-                        display: flex;
-
-                        font: {
-                            size: 4rem;
-                        }
-
-                        li {
-                            &:first-child {
-                                margin-right: 2.4rem;
-                            }
-
-                            a {
-                                i {
-                                    &::before {
-                                        color: var(--clr-white);
-                                        transition: color 300ms ease-in-out;
-                                    }
-
-                                    &:hover {
-
-                                        &::before {
-                                            color: var(--clr-primary);
-                                            transition: color 300ms ease-in-out;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -251,36 +245,14 @@
         color: rgba(#171717, .9);
     }
 
-    transition: all 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
 
     .header__navbar {
         a {
             img {
                 width: 11rem;
-                transition: width 300ms linear;
+                transition: width 300ms ease-in-out;
             }
         }
-    }
-}
-
-@-webkit-keyframes fadeInBottomHeader {
-    from {
-        transform: translateY(200px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInBottomHeader {
-    from {
-        transform: translateY(200px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

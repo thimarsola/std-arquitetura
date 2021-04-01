@@ -41,12 +41,12 @@ define("SOCIAL", [
  * MAIL CONNECT
  */
 define("MAIL", [
-    "host" => "mail.goognet.com.br",
+    "host" => "mail.stdarquitetura.com.br",
     "port" => "587",
-    "user" => "sender@goognet.com.br",
+    "user" => "sender@stdarquitetura.com.br",
     "passwd" => "Contato123*",
-    "from_name" => "Website Domain",
-    "from_email" => "thiago.marsola@goognet.com.br"
+    "from_name" => "STD Arquitetura",
+    "from_email" => "contato@stdarquitetura.com.br"
 ]);
 
 /**

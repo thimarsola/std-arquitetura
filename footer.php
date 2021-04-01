@@ -1,3 +1,4 @@
+<?php if(!is_404()): ?>
 <!-- footer -->
 <footer class="footer">
 
@@ -19,13 +20,14 @@
                             title="Agência Especializada em Marketing Digital"><?= DEV["name"]; ?></a></b></small></p>
 
             <?php
-            $protocols = array('http://', 'http://www.', 'www.');
+            $protocols = array('http://', 'http://www.', 'https://', 'https://www.', 'www.');
 
             if (is_home()) {
-                $urlBase = str_replace($protocols, '', get_bloginfo('wpurl'));
+                $urlBase = str_replace($protocols, "", get_bloginfo('wpurl'));
             } else {
-                $urlBase = str_replace($protocols, '', get_bloginfo('wpurl')) . '/' . (get_page_uri());
+                $urlBase = str_replace($protocols, "", get_bloginfo('wpurl')) . '/' . (get_page_uri());
             }
+
             ?>
 
             <!--validator-->
@@ -43,6 +45,7 @@
 
 </footer>
 <!-- end of footer -->
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>

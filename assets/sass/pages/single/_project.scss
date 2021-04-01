@@ -139,9 +139,6 @@
                     }
 
                     a {
-                        position: relative;
-                        width: 100%;
-                        height: 100%;
 
                         &::after {
                             position: absolute;
@@ -187,7 +184,6 @@
                                 transition-delay: 250ms;
                             }
                         }
-
 
                         img {
                             width: 100%;

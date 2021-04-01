@@ -1,0 +1,517 @@
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../font/Roboto/Roboto-Light.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../font/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display Regular";
+  src: url("../font/PlayfairDisplay/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display Bold";
+  src: url("../font/PlayfairDisplay/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+:root {
+  --font-base: 50%;
+  --gap: 1.5rem;
+  --clr-primary: #A74F52 ;
+  --clr-text-gray: #222222 ;
+  --clr-white: #fff ;
+  --clr-dark: #171717 ;
+  --clr-dark-light: #1F1F1F ;
+  --clr-gray: #F4F4F4 ;
+  --clr-light-gray: #F9F9F9 ;
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --font-base: 62.5%;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+span {
+  font-family: inherit !important;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  list-style-position: inside;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 1.4rem 1.6rem;
+  background: none;
+  border: 1.5px solid var(--clr-white);
+  color: var(--clr-white) !important;
+  line-height: 1.5;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+  font-family: "Roboto Light", sans-serif !important;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-size: 1.4rem !important;
+  color: inherit;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  font-size: 1.4rem !important;
+  color: inherit;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-size: 1.4rem !important;
+  color: inherit;
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  font-size: 1.4rem !important;
+  color: inherit;
+}
+input::placeholder,
+textarea::placeholder {
+  font-size: 1.4rem !important;
+  color: inherit;
+}
+input:focus,
+textarea:focus {
+  border: 2px solid var(--clr-primary);
+  transform: scale(1.005);
+  transition: transform 0.3s ease-in-out;
+}
+
+textarea {
+  min-height: 9.6rem;
+  resize: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+* {
+  font-family: "Roboto Light", sans-serif !important;
+}
+
+html {
+  font-size: var(--font-base) !important;
+  color: var(--clr-text-gray);
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display Bold", serif !important;
+  font-size: inherit;
+  line-height: 1.1;
+}
+
+strong,
+b {
+  font-family: "Roboto Medium", sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit !important;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+address {
+  font: inherit;
+}
+
+.bg-primary {
+  background-color: var(--clr-primary) !important;
+}
+
+.bg-text-gray {
+  background-color: var(--clr-text-gray) !important;
+}
+
+.bg-white {
+  background-color: var(--clr-white) !important;
+}
+
+.bg-dark {
+  background-color: var(--clr-dark) !important;
+}
+
+.bg-dark-light {
+  background-color: var(--clr-dark-light) !important;
+}
+
+.bg-gray {
+  background-color: var(--clr-gray) !important;
+}
+
+.bg-light-gray {
+  background-color: var(--clr-light-gray) !important;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  width: 100%;
+}
+@media only screen and (min-width: 576px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 1.6rem;
+    max-width: 540px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 1.6rem;
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 1.6rem;
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 1.6rem;
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 1.6rem;
+    max-width: 1320px;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+.btn {
+  display: inline-block !important;
+  margin: 0;
+  padding: 1.6rem 5.2rem;
+  border-radius: none;
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+  border: none;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+  font-family: "Roboto Medium", sans-serif !important;
+  font-size: 1.8rem;
+}
+.btn:active {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn--primary {
+  background-color: #A74F52;
+  color: var(--clr-white);
+  transition: background-color 0.5s ease-in-out;
+}
+.btn--primary:hover {
+  background-color: #843f41;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--text-gray {
+  background-color: #222222;
+  color: var(--clr-white);
+  transition: background-color 0.5s ease-in-out;
+}
+.btn--text-gray:hover {
+  background-color: #090909;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--white {
+  background-color: #fff;
+  color: var(--clr-white);
+  transition: background-color 0.5s ease-in-out;
+}
+.btn--white:hover {
+  background-color: #e6e6e6;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--dark {
+  background-color: #171717;
+  color: var(--clr-white);
+  transition: background-color 0.5s ease-in-out;
+}
+.btn--dark:hover {
+  background-color: black;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--dark-light {
+  background-color: #1F1F1F;
+  color: var(--clr-white);
+  transition: background-color 0.5s ease-in-out;
+}
+.btn--dark-light:hover {
+  background-color: #060606;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--gray {
+  background-color: #F4F4F4;
+  color: var(--clr-white);
+  transition: background-color 0.5s ease-in-out;
+}
+.btn--gray:hover {
+  background-color: #dbdbdb;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--light-gray {
+  background-color: #F9F9F9;
+  color: var(--clr-white);
+  transition: background-color 0.5s ease-in-out;
+}
+.btn--light-gray:hover {
+  background-color: #e0e0e0;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn--outline-primary {
+  border: 2px solid #A74F52 !important;
+  color: #A74F52;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn--outline-primary:hover {
+  background-color: #843f41;
+  color: var(--clr-white);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn--outline-text-gray {
+  border: 2px solid #222222 !important;
+  color: #222222;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn--outline-text-gray:hover {
+  background-color: #090909;
+  color: var(--clr-white);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn--outline-white {
+  border: 2px solid #fff !important;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn--outline-white:hover {
+  background-color: #e6e6e6;
+  color: var(--clr-white);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn--outline-dark {
+  border: 2px solid #171717 !important;
+  color: #171717;
+  transition: 0.3s ease-in-out all;
+}
+.btn--outline-dark:hover {
+  background-color: var(--clr-primary);
+  border: 2px solid var(--clr-primary) !important;
+  color: var(--clr-white);
+  transition: 0.3s ease-in-out all;
+}
+
+.btn--outline-dark-light {
+  border: 2px solid #1F1F1F !important;
+  color: #1F1F1F;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn--outline-dark-light:hover {
+  background-color: #060606;
+  color: var(--clr-white);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn--outline-gray {
+  border: 2px solid #F4F4F4 !important;
+  color: #F4F4F4;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn--outline-gray:hover {
+  background-color: #dbdbdb;
+  color: var(--clr-white);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn--outline-light-gray {
+  border: 2px solid #F9F9F9 !important;
+  color: #F9F9F9;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn--outline-light-gray:hover {
+  background-color: #e0e0e0;
+  color: var(--clr-white);
+  transition: background-color 0.3s ease-in-out;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+@media only screen and (max-width: 425px) {
+  main {
+    flex-direction: column;
+  }
+}
+main .image {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+}
+@media only screen and (max-width: 425px) {
+  main .image img {
+    max-height: 22rem;
+  }
+}
+main .error {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  flex-basis: 50%;
+  background-color: var(--clr-dark);
+  color: var(--clr-white);
+}
+@media only screen and (max-width: 425px) {
+  main .error {
+    text-align: center;
+  }
+}
+main .error__header {
+  margin-bottom: 3.2rem;
+  font-size: 8rem;
+}
+@media only screen and (max-width: 425px) {
+  main .error__header {
+    font-size: 6rem;
+  }
+}
+main .error__content {
+  font-size: 1.8rem;
+}
+@media only screen and (max-width: 425px) {
+  main .error__content {
+    font-size: 1.6rem;
+  }
+}
+main .error__button {
+  margin-top: 8rem;
+}
+@media only screen and (max-width: 425px) {
+  main .error__button {
+    margin-top: 4.8rem;
+  }
+}
+
+/*# sourceMappingURL=style-error.css.map */

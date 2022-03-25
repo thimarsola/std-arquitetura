@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const path = $(location).attr("href");
+    const path = $(location).attr("origin");
     const file = 'wp-content/themes/stdarquitetura/source/Support/Sender.php';
 
     $('#form').submit(function (e) {
@@ -8,7 +8,7 @@ $(document).ready(function () {
         $(".contact__form__content__status").removeClass("d-none");
 
         $.ajax({
-            url: path.concat(file),
+            url: path.concat('/').concat(file),
             type: 'POST',
             cache: false,
             data: $('#form').serialize(),

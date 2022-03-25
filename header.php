@@ -129,3 +129,7 @@
     </header>
     <!--end of header-->
     <?php endif ?>
+
+    <!-- whatsapp -->
+    <?php get_template_part('template-parts/content', 'whatsapp'); ?>
+    <!-- end of whatsapp -->

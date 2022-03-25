@@ -19,13 +19,14 @@
     transition: background-color 300ms ease-in-out;
     -webkit-animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
     animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
+    cursor: pointer;
 
     &:hover {
         background-color: darken(#34af23, 10%);
         transition: background-color 300ms ease-in-out;
     }
 
-    a {
+    i {
         @include marginSet;
 
         font: {
@@ -33,6 +34,35 @@
         }
 
         color: var(--clr-white);
+    }
+}
+
+.whatsapp__button__container{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 10rem;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(#000, .15);
+
+    &--active{
+        display: block;
+    }
+
+    a{
+        min-width: 100%;
+        text-align: center;
+        background-color: #34af23;
+        color: #fff;
+
+        &:hover{
+            background-color: darken(#34af23, 10%);
+        }
+
+        &:first-child{
+            margin-bottom: 1rem !important;
+        }
     }
 }
 

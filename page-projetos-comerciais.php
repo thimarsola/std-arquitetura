@@ -23,16 +23,6 @@
     </section>
     <!-- end of hero -->
 
-    <!-- whatsapp -->
-    <div id="whatsapp" class="whatsapp__button">
-        <a rel="nofollow"
-            href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]); ?>&text=<?= urlencode(CONTACT["whatsappMessage"]); ?>"
-            target="_blank" title="Fale com a STD Arquitetura pelo WhatsApp">
-            <i class="stdarquitetura-whatsapp"></i>
-        </a>
-    </div>
-    <!-- end of whatsapp -->
-
     <!-- projects -->
     <section class="projects">
         <div class="container">

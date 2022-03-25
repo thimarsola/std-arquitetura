@@ -18,3 +18,6 @@ require_once get_template_directory() . '/inc/Thumbnails.php';
 
 //LOAD MORE
 require_once get_template_directory() . '/inc/Ajax.php';
+
+//WhastApp
+require_once get_template_directory() . '/inc/Whatsapp.php';

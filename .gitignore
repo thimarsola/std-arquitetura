@@ -1,3 +1,6 @@
 .sass-cache/*
-/node_modules/
-/vendor/
+node_modules/**
+vendor/**
+source/Config.php
+composer.phar
+.DS_Store

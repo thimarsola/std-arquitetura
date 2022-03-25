@@ -2,16 +2,6 @@
 
 <!-- main -->
 <main>
-    <!-- whatsapp -->
-    <div id="whatsapp" class="whatsapp__button">
-        <a rel="nofollow"
-            href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]); ?>&text=<?= urlencode(CONTACT["whatsappMessage"]); ?>"
-            target="_blank" title="Fale com a STD Arquitetura pelo WhatsApp">
-            <i class="stdarquitetura-whatsapp"></i>
-        </a>
-    </div>
-    <!-- end of whatsapp -->
-
     <?php
 if(have_posts()):
     while(have_posts()) : the_post();

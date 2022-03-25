@@ -31,16 +31,6 @@
     </section>
     <!-- end of hero -->
 
-    <!-- whatsapp -->
-    <div id="whatsapp" class="whatsapp__button">
-        <a rel="nofollow"
-            href="https://api.whatsapp.com/send?phone=55<?= formatPhone(CONTACT["whatsapp"]); ?>&text=<?= urlencode(CONTACT["whatsappMessage"]); ?>"
-            target="_blank" title="Fale com a STD Arquitetura pelo WhatsApp">
-            <i class="stdarquitetura-whatsapp"></i>
-        </a>
-    </div>
-    <!-- end of whatsapp -->
-
     <!-- about us -->
     <section id="a-arquitetura-esta-no-dna" class="aboutUs">
 
@@ -427,8 +417,8 @@
                 </form>
 
                 <!-- status -->
-                <div class="contact__form__content__status">
-                    <div class="d-none contact__form__content__status--loading">
+                <div class="contact__form__content__status d-none">
+                    <div class="contact__form__content__status--loading">
                         <img src="<?= get_template_directory_uri(); ?>/assets/images/spinner.svg" alt="Carregando"
                             loading="lazy">
                     </div>
@@ -481,12 +471,15 @@
                     </header>
                     <!-- end of header -->
 
-                    <p>Matriz: <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>"
+                    <p><?= (CONTACT["office"] == null ? 'Telefone: ' : 'Matriz: ')?>
+                        <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>"
                             title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a></p>
                     <br>
-                    <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>"
-                            title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
-                    <br>
+                    <?php if(CONTACT["office"] != null): ?>
+                        <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>"
+                                title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
+                        <br>
+                    <?php endif; ?>
                     <p>Arquiteta Thamires Dias: <a href="tel:<?= formatPhone(CONTACT["telThamires"]); ?>"
                             title="Telefone da Arquiteta Thamires Dias"><?= CONTACT["telThamires"]; ?></a></p>
                     <br>
@@ -517,14 +510,15 @@
                         <h3>Endereço</h3>
                     </header>
                     <!-- end of header -->
-                    <address>Matriz: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
-                            title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
-                            3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
+                    <address><?= (CONTACT["addressOffice"] == null ? null : 'Matriz: ')?> 
+                        <a href="<?= CONTACT['addressMatrixLink']; ?>" target="_blank" title="Venha fazer uma visita a matriz STD Arquitetura"><?= CONTACT['addressMatrix']; ?></a>
+                    </a>
+                    </address>
                     <br>
-                    <address>Escritório: <a href="<?= CONTACT["addressMatrix"] ?>" target="_blank"
-                            title="Venha fazer uma visita a matriz STD Arquitetura">Rua José Versolato, 111B/ Sala
-                            3419 - Domo Business - Centro - São Bernardo do Campo - SP</a></address>
-
+                    <?php if(CONTACT["addressOffice"] != null): ?>
+                        <address>Escritório: <a href="<?= CONTACT["addressOfficeLink"]; ?>" target="_blank"
+                            title="Venha fazer uma visita a matriz STD Arquitetura"</a><?= CONTACT['addressOffice']; ?></address>
+                    <?php endif; ?>
                 </article>
                 <!-- end of address -->
 

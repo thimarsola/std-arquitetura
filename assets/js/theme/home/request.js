@@ -1,21 +1,28 @@
-// var $j = jQuery.noConflict();
-
 $(document).ready(function () {
-    $('#form').submit(function () {
+    const path = $(location).attr("href");
+    const file = 'wp-content/themes/stdarquitetura/source/Support/Sender.php';
+
+    $('#form').submit(function (e) {
+        e.preventDefault();
+
+        $(".contact__form__content__status").removeClass("d-none");
+
         $.ajax({
-            url: 'https://localhost/stdarquitetura.com.br/wp-content/themes/stdarquitetura/source/Support/Sender.php',
+            url: path.concat(file),
             type: 'POST',
+            cache: false,
             data: $('#form').serialize(),
             success: function (data) {
-                $('.contact__form__content__status').html(data);
+                $('.contact__form__content__status').append(data);
+
+                setTimeout(function (){
+                    $(".contact__form__content__status").addClass("d-none");
+                }, 3000);
+            },
+            error: function(){
+                $('.contact__form__content__status').append('Erro');
             }
         });
         return false;
-    });
-});
-
-$(function () {
-    $("#button").click(function () {
-        $(".contact__form__content__status--loading").removeClass("d-none");
     });
 });

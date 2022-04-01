@@ -1,4 +1,4 @@
-@use '../abstracts/'as *;
+@use "../abstracts/" as *;
 
 #whatsapp {
     position: fixed;
@@ -15,10 +15,10 @@
     align-items: center;
     z-index: 10;
     background-color: #34af23;
-    opacity: 0;
-    transition: background-color 300ms ease-in-out;
-    -webkit-animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
-    animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
+    // opacity: 0;
+    // transition: background-color 300ms ease-in-out;
+    // -webkit-animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
+    // animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
     cursor: pointer;
 
     &:hover {
@@ -37,51 +37,77 @@
     }
 }
 
-.whatsapp__button__container{
+.whatsapp__button__container {
     display: none;
     position: absolute;
     right: 0;
     bottom: 10rem;
-    padding: 2rem;
-    background-color: #fff;
-    box-shadow: 0 0 30px rgba(#000, .15);
 
-    &--active{
-        display: block;
+    &--active {
+        display: flex;
+        gap: var(--gap);
+        flex-direction: column;
     }
 
-    a{
-        min-width: 100%;
-        text-align: center;
-        background-color: #34af23;
-        color: #fff;
+    &__group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--gap);
+        background: var(--clr-white);
+        padding-left: 3rem;
+        border-radius: 3rem;
+        box-shadow: 0 0 15px rgba(#000, 0.2);
+        transition: all 300ms ease-in-out;
+        outline: 2px solid var(--clr-primary);
 
-        &:hover{
-            background-color: darken(#34af23, 10%);
+        &:hover {
+            background: var(--clr-primary);
+            transition: all 300ms ease-in-out;
+
+            a {
+                color: var(--clr-white);
+                transition: all 300ms ease-in-out;
+            }
         }
 
-        &:first-child{
-            margin-bottom: 1rem !important;
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6rem;
+            height: 6rem;
+            background-color: var(--clr-primary);
+            border-radius: 50%;
+        }
+
+        a {
+            font-family: "Roboto Medium", sans-serif !important;
+            font-size: 1.8rem;
+            text-align: right;
+            color: var(--clr-primary);
+            transition: all 300ms ease-in-out;
+            flex-grow: 1;
         }
     }
 }
 
-@-webkit-keyframes fadeWhatsapp {
-    from {
-        opacity: 0;
-    }
+// @-webkit-keyframes fadeWhatsapp {
+//     from {
+//         opacity: 0;
+//     }
 
-    to {
-        opacity: 1;
-    }
-}
+//     to {
+//         opacity: 1;
+//     }
+// }
 
-@keyframes fadeWhatsapp {
-    from {
-        opacity: 0;
-    }
+// @keyframes fadeWhatsapp {
+//     from {
+//         opacity: 0;
+//     }
 
-    to {
-        opacity: 1;
-    }
-}
+//     to {
+//         opacity: 1;
+//     }
+// }

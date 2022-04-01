@@ -662,10 +662,6 @@ address {
   align-items: center;
   z-index: 10;
   background-color: #34af23;
-  opacity: 0;
-  transition: background-color 300ms ease-in-out;
-  -webkit-animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
-  animation: fadeWhatsapp 700ms linear 3200ms 1 normal forwards;
   cursor: pointer;
 }
 #whatsapp:hover {
@@ -684,42 +680,50 @@ address {
   position: absolute;
   right: 0;
   bottom: 10rem;
-  padding: 2rem;
-  background-color: #fff;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
 }
 .whatsapp__button__container--active {
-  display: block;
+  display: flex;
+  gap: var(--gap);
+  flex-direction: column;
 }
-.whatsapp__button__container a {
-  min-width: 100%;
-  text-align: center;
-  background-color: #34af23;
-  color: #fff;
+.whatsapp__button__container__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  background: var(--clr-white);
+  padding-left: 3rem;
+  border-radius: 3rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: all 300ms ease-in-out;
+  outline: 2px solid var(--clr-primary);
 }
-.whatsapp__button__container a:hover {
-  background-color: #27851b;
+.whatsapp__button__container__group:hover {
+  background: var(--clr-primary);
+  transition: all 300ms ease-in-out;
 }
-.whatsapp__button__container a:first-child {
-  margin-bottom: 1rem !important;
+.whatsapp__button__container__group:hover a {
+  color: var(--clr-white);
+  transition: all 300ms ease-in-out;
+}
+.whatsapp__button__container__group span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--clr-primary);
+  border-radius: 50%;
+}
+.whatsapp__button__container__group a {
+  font-family: "Roboto Medium", sans-serif !important;
+  font-size: 1.8rem;
+  text-align: right;
+  color: var(--clr-primary);
+  transition: all 300ms ease-in-out;
+  flex-grow: 1;
 }
 
-@-webkit-keyframes fadeWhatsapp {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeWhatsapp {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .footer {
   margin: 0;
   padding: 0;

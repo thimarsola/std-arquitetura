@@ -68,10 +68,8 @@
         <!-- image -->
         <div class="aboutUs__image">
             <picture>
-                <source srcset="<?= get_template_directory_uri(); ?>/assets/images/dna-std-arquitetura.webp"
-                    type="image/webp">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/dna-std-arquitetura.jpg"
-                    alt="A arquitetura está no DNA do escritório STD Arquitetura" loading="lazy">
+                <source srcset="<?= get_template_directory_uri(); ?>/assets/images/dna-std-arquitetura.webp" type="image/webp">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/dna-std-arquitetura.jpg" alt="A arquitetura está no DNA do escritório STD Arquitetura" loading="lazy">
             </picture>
         </div>
         <!-- end of image -->
@@ -85,10 +83,8 @@
         <!-- image -->
         <div class="dna__image">
             <picture>
-                <source srcset="<?= get_template_directory_uri(); ?>/assets/images/dna-mae-e-filha.webp"
-                    type="image/webp">
-                <img src="<?= get_template_directory_uri(); ?>/assets/images/dna-mae-e-filha.jpg"
-                    alt="DNA Silvia Dias e Thamires Dias" loading="lazy">
+                <source srcset="<?= get_template_directory_uri(); ?>/assets/images/dna-mae-e-filha.webp" type="image/webp">
+                <img src="<?= get_template_directory_uri(); ?>/assets/images/dna-mae-e-filha.jpg" alt="DNA Silvia Dias e Thamires Dias" loading="lazy">
             </picture>
         </div>
         <!-- end of image -->
@@ -137,48 +133,44 @@
                 $projectStepsList = json_decode($jsonProjectSteps, true);
 
                 foreach ($projectStepsList['steps'] as $projectStep) :
-                    ?>
+                ?>
 
-                <!-- step -->
-                <article class="projectSteps__content__step">
-                    <!-- image -->
-                    <div class="projectSteps__content__step__image"
-                        style="--background: url('<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.jpg');">
-                        <picture>
-                            <source
-                                srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.webp"
-                                type="image/webp">
-                            <img src="<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.jpg"
-                                alt="Etapa do Projeto - <?= $projectStep["title"] ?>" loading="lazy">
-                        </picture>
-                    </div>
-                    <!-- end of image -->
+                    <!-- step -->
+                    <article class="projectSteps__content__step">
+                        <!-- image -->
+                        <div class="projectSteps__content__step__image" style="--background: url('<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.jpg');">
+                            <picture>
+                                <source srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.webp" type="image/webp">
+                                <img src="<?= get_template_directory_uri(); ?>/assets/images/<?= $projectStep["image"]; ?>.jpg" alt="Etapa do Projeto - <?= $projectStep["title"] ?>" loading="lazy">
+                            </picture>
+                        </div>
+                        <!-- end of image -->
 
-                    <!-- body -->
-                    <div class="projectSteps__content__step__body">
+                        <!-- body -->
+                        <div class="projectSteps__content__step__body">
 
-                        <!-- header -->
-                        <header class="projectSteps__content__step__body__header">
-                            <h3><?= $projectStep["title"]; ?></h3>
-                            <hr>
-                        </header>
-                        <!-- end of header -->
+                            <!-- header -->
+                            <header class="projectSteps__content__step__body__header">
+                                <h3><?= $projectStep["title"]; ?></h3>
+                                <hr>
+                            </header>
+                            <!-- end of header -->
 
-                        <div class="projectSteps__content__step__body__container">
-                            <?php
-                            foreach ($projectStep["text"] as $textInline) :
+                            <div class="projectSteps__content__step__body__container">
+                                <?php
+                                foreach ($projectStep["text"] as $textInline) :
                                 ?>
 
-                            <p><?= $textInline; ?></p>
+                                    <p><?= $textInline; ?></p>
 
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </div>
+
                         </div>
+                        <!-- end of body -->
 
-                    </div>
-                    <!-- end of body -->
-
-                </article>
-                <!-- end of step -->
+                    </article>
+                    <!-- end of step -->
 
                 <?php endforeach; ?>
 
@@ -205,41 +197,37 @@
                 <!--layout-->
                 <div class="projects__content__layout">
                     <?php
-                        $paged = ( get_query_var('paged') ) ? absint(get_query_var('paged')) : 1;
+                    $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
 
-                        $argProjects = [
-                            'posts_per_page' => 6,
-                            'post_type' => 'projetos',
-                            'paged' => $paged,
-                        ];
-                        // the query
-                        $the_query = new WP_Query($argProjects);
+                    $argProjects = [
+                        'posts_per_page' => 6,
+                        'post_type' => 'projetos',
+                        'paged' => $paged,
+                    ];
+                    // the query
+                    $the_query = new WP_Query($argProjects);
                     ?>
 
                     <?php if ($the_query->have_posts()) : ?>
-                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                    <?php get_template_part('template-parts/content', 'projects'); ?>
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
+                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                            <?php get_template_part('template-parts/content', 'projects'); ?>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
                     <?php else : ?>
 
-                    <p style="grid-column: 1/4;">
-                        <?php
+                        <p style="grid-column: 1/4;">
+                            <?php
                             _e('Desculpe! Não existem projetos cadastrados no momento.');
-                        ?>
-                    </p>
+                            ?>
+                        </p>
                     <?php endif; ?>
                 </div>
                 <!--end of layout-->
 
                 <!-- buttons -->
                 <div class="projects__content__buttons">
-                    <a href="<?= get_permalink(get_page_by_title('Projetos Residenciais')); ?>"
-                        class="btn btn--outline-dark" target="_blank"
-                        title="Conheça os nossos Projetos Residênciais">Projetos Residenciais</a>
-                    <a href="<?= get_permalink(get_page_by_title('Projetos Comerciais')); ?>"
-                        class="btn btn--outline-dark" target="_blank"
-                        title="Conheça os nossos Projetos Comerciais">Projetos Comerciais</a>
+                    <a href="<?= get_permalink(get_page_by_title('Projetos Residenciais')); ?>" class="btn btn--outline-dark" target="_blank" title="Conheça os nossos Projetos Residênciais">Projetos Residenciais</a>
+                    <a href="<?= get_permalink(get_page_by_title('Projetos Comerciais')); ?>" class="btn btn--outline-dark" target="_blank" title="Conheça os nossos Projetos Comerciais">Projetos Comerciais</a>
                 </div>
                 <!-- end of buttons -->
 
@@ -263,43 +251,40 @@
             <div class="testimonial__content">
 
                 <?php
-                    $jsonTestimonial = file_get_contents(__DIR__ . "/includes/testimonial.json");
-                    $testimonialList = json_decode($jsonTestimonial, true);
+                $jsonTestimonial = file_get_contents(__DIR__ . "/includes/testimonial.json");
+                $testimonialList = json_decode($jsonTestimonial, true);
 
                 foreach ($testimonialList['testimonial'] as $testimony) :
-                    ?>
+                ?>
 
-                <!-- card -->
-                <div class="testimonial__content__card">
+                    <!-- card -->
+                    <div class="testimonial__content__card">
 
-                    <!-- body -->
-                    <div class="testimonial__content__card__body">
-                        <span>“</span>
-                        <?php
-                    foreach ($testimony["text"] as $paragraphTestimony) :
-                        ?>
-                        <p><?= $paragraphTestimony; ?></p>
-                        <?php endforeach; ?>
-                    </div>
-                    <!-- end of body -->
-
-                    <!-- header -->
-                    <div class="testimonial__content__card__header">
-                        <div class="testimonial__content__card__header__image">
-                            <picture>
-                                <source
-                                    srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.webp"
-                                    type="image/webp">
-                                <img src="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.jpg"
-                                    alt="Depoimento <?= $testimony["name"]; ?>" loading="lazy">
-                            </picture>
+                        <!-- body -->
+                        <div class="testimonial__content__card__body">
+                            <span>“</span>
+                            <?php
+                            foreach ($testimony["text"] as $paragraphTestimony) :
+                            ?>
+                                <p><?= $paragraphTestimony; ?></p>
+                            <?php endforeach; ?>
                         </div>
-                        <p><?= $testimony["name"]; ?></p>
-                    </div>
-                    <!-- end of header -->
+                        <!-- end of body -->
 
-                </div>
-                <!-- end of card -->
+                        <!-- header -->
+                        <div class="testimonial__content__card__header">
+                            <div class="testimonial__content__card__header__image">
+                                <picture>
+                                    <source srcset="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.webp" type="image/webp">
+                                    <img src="<?= get_template_directory_uri(); ?>/assets/images/<?= $testimony["image"]; ?>.jpg" alt="Depoimento <?= $testimony["name"]; ?>" loading="lazy">
+                                </picture>
+                            </div>
+                            <p><?= $testimony["name"]; ?></p>
+                        </div>
+                        <!-- end of header -->
+
+                    </div>
+                    <!-- end of card -->
 
                 <?php endforeach; ?>
             </div>
@@ -331,24 +316,24 @@
                         $awardsList = json_decode($jsonAwards, true);
 
                         foreach ($awardsList["awards"] as $award) :
-                            ?>
+                        ?>
 
-                        <article class="awards__container__content__award__card">
+                            <article class="awards__container__content__award__card">
 
-                            <!-- header -->
-                            <header class="awards__container__content__award__card__header">
-                                <h3><?= $award["name"]; ?></h3>
-                                <p><?= $award["category"]; ?></p>
-                            </header>
-                            <!-- end of header -->
+                                <!-- header -->
+                                <header class="awards__container__content__award__card__header">
+                                    <h3><?= $award["name"]; ?></h3>
+                                    <p><?= $award["category"]; ?></p>
+                                </header>
+                                <!-- end of header -->
 
-                            <!-- body -->
-                            <div class="awards__container__content__award__card__body">
-                                <p><?= $award["description"]; ?></p>
-                            </div>
-                            <!-- end of body -->
+                                <!-- body -->
+                                <div class="awards__container__content__award__card__body">
+                                    <p><?= $award["description"]; ?></p>
+                                </div>
+                                <!-- end of body -->
 
-                        </article>
+                            </article>
 
                         <?php endforeach; ?>
 
@@ -358,11 +343,8 @@
                     <!-- image -->
                     <div class="awards__container__content__image">
                         <picture>
-                            <source
-                                srcset="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura-destaque.webp"
-                                type="image/webp">
-                            <img src="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura-destaque.jpg"
-                                alt="Prêmios que o escritório STD Arquitetura já ganhou" loading="lazy">
+                            <source srcset="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura-destaque.webp" type="image/webp">
+                            <img src="<?= get_template_directory_uri(); ?>/assets/images/premios-std-arquitetura-destaque.jpg" alt="Prêmios que o escritório STD Arquitetura já ganhou" loading="lazy">
                         </picture>
                         <p>Não paramos por aqui! O Escritório <b>STD Arquitetura</b> é premiado desde o ano de 2007,
                             pelas principais revistas e associações de Arquitetura e Design de Interiores, entre eles
@@ -406,12 +388,10 @@
                     <input id="name" type="text" name="name" placeholder="Nome" required>
                     <input id="email" type="email" name="mail" placeholder="E-mail" required>
                     <input id="phone" type="tel" name="phone" placeholder="Telefone" required>
-                    <textarea id="message" name="message" cols="50" rows="4"
-                        placeholder="Mensagem (Para orçamento informe o tipo de imóvel, metragem e localização)"></textarea>
+                    <textarea id="message" name="message" cols="50" rows="4" placeholder="Mensagem (Para orçamento informe o tipo de imóvel, metragem e localização)"></textarea>
                     <!-- button -->
                     <div class="form__button">
-                        <button id="button" type="submit" name="submit" value="submit"
-                            class="btn btn--primary">Enviar</button>
+                        <button id="button" type="submit" name="submit" value="submit" class="btn btn--primary">Enviar</button>
                     </div>
                     <!-- end of button -->
                 </form>
@@ -419,8 +399,7 @@
                 <!-- status -->
                 <div class="contact__form__content__status d-none">
                     <div class="contact__form__content__status--loading">
-                        <img src="<?= get_template_directory_uri(); ?>/assets/images/spinner.svg" alt="Carregando"
-                            loading="lazy">
+                        <img src="<?= get_template_directory_uri(); ?>/assets/images/spinner.svg" alt="Carregando" loading="lazy">
                     </div>
                 </div>
                 <!-- end of status -->
@@ -471,20 +450,17 @@
                     </header>
                     <!-- end of header -->
 
-                    <p><?= (CONTACT["office"] == null ? 'Telefone: ' : 'Matriz: ')?>
-                        <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>"
-                            title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a></p>
+                    <p><?= (CONTACT["office"] == null ? 'Telefone: ' : 'Matriz: ') ?>
+                        <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>" title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a>
+                    </p>
                     <br>
-                    <?php if(CONTACT["office"] != null): ?>
-                        <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>"
-                                title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
+                    <?php if (CONTACT["office"] != null) : ?>
+                        <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>" title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
                         <br>
                     <?php endif; ?>
-                    <p>Arquiteta Thamires Dias: <a href="tel:<?= formatPhone(CONTACT["telThamires"]); ?>"
-                            title="Telefone da Arquiteta Thamires Dias"><?= CONTACT["telThamires"]; ?></a></p>
+                    <p>Arquiteta Thamires Dias: <a href="tel:<?= formatPhone(CONTACT["telThamires"]); ?>" title="Telefone da Arquiteta Thamires Dias"><?= CONTACT["telThamires"]; ?></a></p>
                     <br>
-                    <p>Arquiteta Silvia Dias: <a href="tel:<?= formatPhone(CONTACT["telSilvia"]); ?>"
-                            title="Telefone da Arquiteta Silvia Dias"><?= CONTACT["telSilvia"]; ?></a></p>
+                    <p>Arquiteta Silvia Dias: <a href="tel:<?= formatPhone(CONTACT["telSilvia"]); ?>" title="Telefone da Arquiteta Silvia Dias"><?= CONTACT["telSilvia"]; ?></a></p>
                 </article>
                 <!-- end of phones -->
 
@@ -496,8 +472,7 @@
                         <h3>E-mail</h3>
                     </header>
                     <!-- end of header -->
-                    <p><a href="mailto:<?= CONTACT["mail"]; ?>"
-                            title="Encaminhe um E-mail para STD Arquitetura"><?= CONTACT["mail"]; ?></a></p>
+                    <p><a href="mailto:<?= CONTACT["mail"]; ?>" title="Encaminhe um E-mail para STD Arquitetura"><?= CONTACT["mail"]; ?></a></p>
 
                 </article>
                 <!-- end of mail -->
@@ -510,14 +485,13 @@
                         <h3>Endereço</h3>
                     </header>
                     <!-- end of header -->
-                    <address><?= (CONTACT["addressOffice"] == null ? null : 'Matriz: ')?> 
+                    <address><?= (CONTACT["addressOffice"] == null ? null : 'Matriz: ') ?>
                         <a href="<?= CONTACT['addressMatrixLink']; ?>" target="_blank" title="Venha fazer uma visita a matriz STD Arquitetura"><?= CONTACT['addressMatrix']; ?></a>
-                    </a>
                     </address>
                     <br>
-                    <?php if(CONTACT["addressOffice"] != null): ?>
-                        <address>Escritório: <a href="<?= CONTACT["addressOfficeLink"]; ?>" target="_blank"
-                            title="Venha fazer uma visita a matriz STD Arquitetura"</a><?= CONTACT['addressOffice']; ?></address>
+                    <?php if (CONTACT["addressOffice"] != null) : ?>
+                        <address>>Escritório: <a href="<?= CONTACT['addressOfficeLink']; ?>" target="_blank" title="Venha fazer uma visita ao escritório STD Arquitetura"><?= CONTACT['addressOffice']; ?></a>
+                        </address>
                     <?php endif; ?>
                 </article>
                 <!-- end of address -->
@@ -537,9 +511,7 @@
 
     <!-- map -->
     <div class="map">
-        <iframe title="Escritório STD Arquitetura"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.5733669292827!2d-46.5530975850198!3d-23.691210384618618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4235f23fc7d5%3A0xf73b6e352b6b83e8!2sR.%20Jos%C3%A9%20Versolato%2C%20111%20-%20Centro%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009751-020!5e0!3m2!1spt-BR!2sbr!4v1615288098466!5m2!1spt-BR!2sbr"
-            allowfullscreen="" loading="lazy"></iframe>
+        <iframe title="Escritório STD Arquitetura" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.5733669292827!2d-46.5530975850198!3d-23.691210384618618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4235f23fc7d5%3A0xf73b6e352b6b83e8!2sR.%20Jos%C3%A9%20Versolato%2C%20111%20-%20Centro%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009751-020!5e0!3m2!1spt-BR!2sbr!4v1615288098466!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <!-- end of map -->
 

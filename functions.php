@@ -16,6 +16,9 @@ require_once get_template_directory() . '/inc/Menu.php';
 //THUMBNAILS SUPPORT
 require_once get_template_directory() . '/inc/Thumbnails.php';
 
+//THEME SUPPORT
+require_once get_template_directory() . '/inc/ThemeSupport.php';
+
 //LOAD MORE
 require_once get_template_directory() . '/inc/Ajax.php';
 

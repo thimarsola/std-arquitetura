@@ -5,13 +5,13 @@
     <!-- container -->
     <div class="whatsapp__button__container">
         <!-- client -->
-        <div class="whatsapp__button__container__group clients">
+        <div class="whatsapp__button__container__group">
             <?= whatsapp(
                 formatPhone(CONTACT['whatsapp']),
                 CONTACT['whatsappMessage'],
                 '<span>Clientes</span>
                 <span><i class="stdarquitetura-whatsapp"></i></span>',
-                null
+                'clients'
             ); ?>
         </div>
         <!-- end of client -->

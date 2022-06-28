@@ -158,7 +158,6 @@ textarea {
   html {
     scroll-behavior: auto;
   }
-
   *,
 *::before,
 *::after {
@@ -681,51 +680,51 @@ address {
 
 .whatsapp__button__container {
   display: none;
+  gap: var(--gap);
+  flex-direction: column;
   position: absolute;
   right: 0;
   bottom: 10rem;
 }
 .whatsapp__button__container--active {
   display: flex;
-  gap: var(--gap);
-  flex-direction: column;
 }
 .whatsapp__button__container__group {
+  background: var(--clr-white);
+  padding-left: 3rem;
+  border-radius: 100vh;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  outline: 2px solid var(--clr-primary);
+  transition: all 300ms ease-in-out;
+}
+.whatsapp__button__container__group:hover {
+  background: var(--clr-primary);
+}
+.whatsapp__button__container__group:hover a span:nth-child(1) {
+  color: var(--clr-white);
+}
+.whatsapp__button__container__group a {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--gap);
-  background: var(--clr-white);
-  padding-left: 3rem;
-  border-radius: 3rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  transition: all 300ms ease-in-out;
-  outline: 2px solid var(--clr-primary);
 }
-.whatsapp__button__container__group:hover {
-  background: var(--clr-primary);
-  transition: all 300ms ease-in-out;
-}
-.whatsapp__button__container__group:hover a {
-  color: var(--clr-white);
-  transition: all 300ms ease-in-out;
-}
-.whatsapp__button__container__group span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 6rem;
-  height: 6rem;
-  background-color: var(--clr-primary);
-  border-radius: 50%;
-}
-.whatsapp__button__container__group a {
+.whatsapp__button__container__group a span:nth-child(1) {
   font-family: "Roboto Medium", sans-serif !important;
   font-size: 1.8rem;
   text-align: right;
   color: var(--clr-primary);
   transition: all 300ms ease-in-out;
   flex-grow: 1;
+}
+.whatsapp__button__container__group a span:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--clr-primary);
+  border-radius: 100vh;
 }
 
 @-webkit-keyframes fadeWhatsapp {

@@ -5,7 +5,7 @@
     <!-- container -->
     <div class="whatsapp__button__container">
         <!-- client -->
-        <div class="whatsapp__button__container__group">
+        <div class="whatsapp__button__container__group clients">
             <?= whatsapp(
                 formatPhone(CONTACT['whatsapp']),
                 CONTACT['whatsappMessage'],

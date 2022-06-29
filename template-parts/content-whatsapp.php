@@ -8,8 +8,10 @@
         <?= whatsapp(
             formatPhone(CONTACT['whatsapp']),
             CONTACT['whatsappMessage'],
-            '<p>Clientes</p>
-            <span><i class="stdarquitetura-whatsapp"></i></span>',
+            '<p class="clients">Clientes</p>
+            <span>
+                <i class="stdarquitetura-whatsapp clients"></i>
+            </span>',
             'clients'
         ); ?>
         <!-- end of client -->
@@ -19,7 +21,9 @@
             formatPhone(CONTACT['whatsapp']),
             'Olá STD Arquitetura, sou um fornecedor e gostaria de apresentar meu produto e/ou serviço',
             '<p>Fornecedores</p>
-            <span><i class="stdarquitetura-whatsapp"></i></span>',
+            <span>
+                <i class="stdarquitetura-whatsapp"></i>
+            </span>',
             null
         ); ?>
         <!-- end of provider -->

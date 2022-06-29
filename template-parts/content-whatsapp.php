@@ -5,27 +5,23 @@
     <!-- container -->
     <div class="whatsapp__button__container">
         <!-- client -->
-        <div class="whatsapp__button__container__group">
-            <?= whatsapp(
-                formatPhone(CONTACT['whatsapp']),
-                CONTACT['whatsappMessage'],
-                '<span>Clientes</span>
-                <span><i class="stdarquitetura-whatsapp"></i></span>',
-                'clients'
-            ); ?>
-        </div>
+        <?= whatsapp(
+            formatPhone(CONTACT['whatsapp']),
+            CONTACT['whatsappMessage'],
+            '<p>Clientes</p>
+            <span><i class="stdarquitetura-whatsapp"></i></span>',
+            'clients'
+        ); ?>
         <!-- end of client -->
 
         <!-- provider -->
-        <div class="whatsapp__button__container__group">
-            <?= whatsapp(
-                formatPhone(CONTACT['whatsapp']),
-                'Olá STD Arquitetura, sou um fornecedor e gostaria de apresentar meu produto e/ou serviço',
-                '<span>Fornecedores</span>
-                <span><i class="stdarquitetura-whatsapp"></i></span>',
-                null
-            ); ?>
-        </div>
+        <?= whatsapp(
+            formatPhone(CONTACT['whatsapp']),
+            'Olá STD Arquitetura, sou um fornecedor e gostaria de apresentar meu produto e/ou serviço',
+            '<p>Fornecedores</p>
+            <span><i class="stdarquitetura-whatsapp"></i></span>',
+            null
+        ); ?>
         <!-- end of provider -->
     </div>
     <!-- end of container -->

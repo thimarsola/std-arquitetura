@@ -689,35 +689,34 @@ address {
 .whatsapp__button__container--active {
   display: flex;
 }
-.whatsapp__button__container__group {
-  background: var(--clr-white);
-  padding-left: 3rem;
-  border-radius: 100vh;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  outline: 2px solid var(--clr-primary);
-  transition: all 300ms ease-in-out;
-}
-.whatsapp__button__container__group:hover {
-  background: var(--clr-primary);
-}
-.whatsapp__button__container__group:hover a span:nth-child(1) {
-  color: var(--clr-white);
-}
-.whatsapp__button__container__group a {
+.whatsapp__button__container a {
+  width: 22rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--gap);
+  background: var(--clr-white);
+  border-radius: 100vh;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--clr-primary);
+  transition: all 300ms ease-in-out;
 }
-.whatsapp__button__container__group a span:nth-child(1) {
+.whatsapp__button__container a:hover {
+  background: var(--clr-primary);
+}
+.whatsapp__button__container a:hover p {
+  color: var(--clr-white);
+}
+.whatsapp__button__container a p {
+  flex: 1;
   font-family: "Roboto Medium", sans-serif !important;
   font-size: 1.8rem;
   text-align: right;
   color: var(--clr-primary);
   transition: all 300ms ease-in-out;
-  flex-grow: 1;
 }
-.whatsapp__button__container__group a span:nth-child(2) {
+.whatsapp__button__container a span {
   display: flex;
   justify-content: center;
   align-items: center;

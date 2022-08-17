@@ -446,21 +446,15 @@
 
                     <!-- header -->
                     <header class="office__information__content__card__header">
-                        <h3>Horário de Funcionamento</h3>
+                        <h3>Contatos</h3>
                     </header>
                     <!-- end of header -->
 
-                    <p><?= (CONTACT["office"] == null ? 'Telefone: ' : 'Matriz: ') ?>
-                        <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>" title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a>
-                    </p>
+                    <p>Telefone: <a href="tel:<?= formatPhone(CONTACT["matrix"]); ?>" title="Telefone da Matriz STD Arquitetura"><?= CONTACT["matrix"]; ?></a></p>
                     <br>
                     <?php if (CONTACT["office"] != null) : ?>
-                        <p>Escritório: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>" title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
-                        <br>
+                        <p>Celular: <a href="tel:<?= formatPhone(CONTACT["office"]); ?>" title="Telefone do Escritório STD Arquitetura"><?= CONTACT["office"]; ?></a></p>
                     <?php endif; ?>
-                    <p>Arquiteta Thamires Dias: <a href="tel:<?= formatPhone(CONTACT["telThamires"]); ?>" title="Telefone da Arquiteta Thamires Dias"><?= CONTACT["telThamires"]; ?></a></p>
-                    <br>
-                    <p>Arquiteta Silvia Dias: <a href="tel:<?= formatPhone(CONTACT["telSilvia"]); ?>" title="Telefone da Arquiteta Silvia Dias"><?= CONTACT["telSilvia"]; ?></a></p>
                 </article>
                 <!-- end of phones -->
 

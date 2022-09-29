@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="alternate" href="<?= (is_home() ? get_site_url() : get_page_link()); ?>" hreflang="x-default" />
-    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <link rel="alternate" href="<?= (is_home() ? get_site_url() : get_page_link()); ?>" hreflang="x-default">
 
     <?php  if (!is_404()): ?>
     <title><?php echo(is_home()) ? SITE["name"] : the_title() . " - " . SITE["name"]; ?></title>
@@ -17,15 +16,15 @@
     <meta name="keywords" content="STD Arquitetura, Escritório STD Arquitetura, Arquitetura, Reforma">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="geo.region" content="BR-SP" />
-    <meta name="geo.placename" content="S&atilde;o Paulo" />
-    <meta name="geo.position" content="-23.553541;-46.652957" />
-    <meta name="ICBM" content="-23.553541, -46.652957" />
+    <meta name="geo.region" content="BR-SP">
+    <meta name="geo.placename" content="S&atilde;o Paulo">
+    <meta name="geo.position" content="-23.553541;-46.652957">
+    <meta name="ICBM" content="-23.553541, -46.652957">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta name="rating" content="General">
     <meta name="revisit-after" content="7 days">
-    <link rel="canonical" href="<?= (is_home() ? get_site_url() : get_page_link()); ?>" />
+    <link rel="canonical" href="<?= (is_home() ? get_site_url() : get_page_link()); ?>">
     <meta name="author" content="<?= SITE["name"]; ?> - <?= SITE["domain"]; ?>">
     <link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/images/favicon.png">
     <meta property="og:region" content="Brasil">
@@ -35,7 +34,9 @@
     <meta property="og:description" content="<?= SITE["desc"]; ?>">
     <meta property="og:site_name" content="<?= SITE["name"] ?>">
 
-    <meta name="google-site-verification" content="2aplT_0QmuOd3L0Mt-TsWP7qHLYdfDs3H8_91QKoMQw" />
+    <meta name="google-site-verification" content="2aplT_0QmuOd3L0Mt-TsWP7qHLYdfDs3H8_91QKoMQw">
+
+    <!-- Standard -->
     <?php wp_head(); ?>
 
     <!-- Google Tag Manager -->
